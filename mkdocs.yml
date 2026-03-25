@@ -1,0 +1,51 @@
+site_name: Learning at School
+site_description:  学校的课程笔记和学习资料maybe
+site_author: MJ
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - navigation.sections
+    - navigation.footer
+  palette:
+    - scheme: default
+      primary: blue
+      accent: light blue
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - 首页: index.md
+  - 笔记: 
+    - 英语文体学: ZJUcourse/stylistics.md
+    - 数据结构基础: 
+      - 第一周: ZJUcourse/FDS/fds_lecture1.md
+      - 第二周: ZJUcourse/FDS/fds_lecture2.md 
+    - 统计学习:
+      - 线性代数基础: ZJUcourse/StatisticalLearning/LinearAlgebra.md
+      - KNN 与偏差-方差权衡: ZJUcourse/StatisticalLearning/slides1.md
+
+
+
+    
+  
+ 
