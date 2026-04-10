@@ -40,10 +40,12 @@ nav:
     - 数据结构基础: 
       - 第一周: ZJUcourse/FDS/fds_lecture1.md
       - 第二周: ZJUcourse/FDS/fds_lecture2.md 
+      - 第三周: ZJUcourse/FDS/fds_lecture3.md
+      - 第四周: ZJUcourse/FDS/fds_lecture4.md
     - 统计学习:
       - 线性代数基础: ZJUcourse/StatisticalLearning/LinearAlgebra.md
       - KNN 与偏差-方差权衡: ZJUcourse/StatisticalLearning/slides1.md
-
+      - 因果推断: ZJUcourse/StatisticalLearning/causal_intro.md
 
 
     
