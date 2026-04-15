@@ -38,13 +38,14 @@ nav:
   - 笔记: 
     - 英语文体学: ZJUcourse/stylistics.md
     - 数据结构基础: 
-      - 第一周: ZJUcourse/FDS/fds_lecture1.md
-      - 第二周: ZJUcourse/FDS/fds_lecture2.md 
-      - 第三周: ZJUcourse/FDS/fds_lecture3.md
-      - 第四周: ZJUcourse/FDS/fds_lecture4.md
+      - 算法分析: ZJUcourse/FDS/fds_lecture1.md
+      - 列表、栈、队列: ZJUcourse/FDS/fds_lecture2.md 
+      - 树: ZJUcourse/FDS/fds_lecture3.md
+      - 堆: ZJUcourse/FDS/fds_lecture4.md
     - 统计学习:
       - 线性代数基础: ZJUcourse/StatisticalLearning/LinearAlgebra.md
-      - KNN 与偏差-方差权衡: ZJUcourse/StatisticalLearning/slides1.md
+      - KNN 与偏差-方差权衡: ZJUcourse/StatisticalLearning/knn.md
+      - 线性回归模型: ZJUcourse/StatisticalLearning/linearreg.md
       - 因果推断: ZJUcourse/StatisticalLearning/causal_intro.md
 
 

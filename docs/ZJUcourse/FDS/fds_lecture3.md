@@ -122,3 +122,45 @@
         - 深度为 $k$ 的二叉树，虽多有 $2^{k+1} - 1$ 个节点
 
         - 叶子节点和度为 2 的节点满足 $n_0 = n_2 + 1$ 
+
+
+## 3 Binary Search Trees
+
+### 定义
+
+BST 是一颗二叉树，可以为空；如果不为空，那么具有以下性质：
+
+ - 每个节点都有一个整数值，并且没有重复
+
+ - 左孩子的值小于根的值，右孩子的值大于根的值
+
+ - 左子树和右子树仍然是 BST
+
+### 实现方法
+
+#### 查找
+
+采用递归的思路，时间复杂度为 $T(N) = O(d)$ ，其中 $d$ 为值 $x$ 的深度：
+
+```c
+BST* FindValue(Type x, BST* t){
+    if (t == NULL)
+        return NULL;    // not found
+
+    if (x < t->value)
+        return FindValue(x, t->left);
+    else if (x > t->value)
+        return FindValue(x, t->right);
+    else:
+        return t;   // found
+}
+```
+
+#### 插入
+
+采用递归的思路，但是要注意检查需要插入的值是否已经在数中。
+
+#### 删除
+
+对于一个要删除的节点，用它的左子树中值最大的节点或者右子树中值最小的节点替代。
+
