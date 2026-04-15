@@ -672,6 +672,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建堆
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -986,6 +997,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建堆
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1040,6 +1062,17 @@ h = [\log{N}].
 <p>采用上滤的思路，将新元素放在二叉树的末尾，然后与父节点比较，如果它的优先级更高则交换，直到满足堆顺序。</p>
 <h3 id="_4">删除<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>采用下滤的思路，删除根节点后，将二叉树末尾的元素移到当前位置，然后与子节点中较大者比较，如果它的优先级较低则交换，直到满足堆顺序。</p>
+<h3 id="_5">建堆<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>一般采用线性建堆的方式，基本步骤是：</p>
+<ol>
+<li>
+<p>按输入元素顺序填充一颗完全二叉树；</p>
+</li>
+<li>
+<p>从第一个非叶子节点开始，比较它和两个孩子的值，如果它的优先级更低，那么和优先级更高的子孩子交换，不断将它下沉直到顺序正确。</p>
+</li>
+</ol>
+<p>时间复杂度是 <span class="arithmatex">\(O(N)\)</span> 。</p>
 
 
 
