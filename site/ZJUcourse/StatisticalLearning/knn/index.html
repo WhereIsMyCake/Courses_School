@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="../LinearAlgebra/">
+      
+      
+        <link rel="next" href="../linearreg/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>Logistic Regression and Discriminant Analysis - Learning at School</title>
+        <title>KNN 与偏差-方差权衡 - Learning at School</title>
       
     
     
@@ -76,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#logistic-regression-and-discriminant-analysis" class="md-skip">
+        <a href="#k-nearest-neighbor-and-the-bias-variance-trade-off" class="md-skip">
           跳转至
         </a>
       
@@ -110,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Logistic Regression and Discriminant Analysis
+              KNN 与偏差-方差权衡
             
           </span>
         </div>
@@ -214,10 +218,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../stylistics/" class="md-tabs__link">
           
   
@@ -294,26 +300,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -331,7 +342,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -383,17 +394,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
             
   
   
@@ -436,7 +450,7 @@
   <span class="md-ellipsis">
     
   
-    第一周
+    算法分析
   
 
     
@@ -464,7 +478,7 @@
   <span class="md-ellipsis">
     
   
-    第二周
+    列表、栈、队列
   
 
     
@@ -492,7 +506,7 @@
   <span class="md-ellipsis">
     
   
-    第三周
+    树
   
 
     
@@ -520,7 +534,7 @@
   <span class="md-ellipsis">
     
   
-    第四周
+    堆
   
 
     
@@ -546,26 +560,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
             
   
   
@@ -583,7 +602,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -626,10 +645,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../slides1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KNN 与偏差-方差权衡
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -645,6 +691,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 回归模型
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -657,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slides2/" class="md-nav__link">
+      <a href="../linearreg/" class="md-nav__link">
         
   
   
@@ -751,74 +828,7 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1 逻辑回归
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1 逻辑回归">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        求解系数
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2 评价分类模型
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2 评价分类模型">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        混淆矩阵
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ROC 曲线
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-lda-qda" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3 LDA 和 QDA
+        1 回归模型
       
     </span>
   </a>
@@ -842,79 +852,167 @@
 
 
 
-<h1 id="logistic-regression-and-discriminant-analysis">Logistic Regression and Discriminant Analysis<a class="headerlink" href="#logistic-regression-and-discriminant-analysis" title="Permanent link">&para;</a></h1>
-<h2 id="1">1 逻辑回归<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>对于一个模型，结果的标签更常见的是概率形式</p>
+<h1 id="k-nearest-neighbor-and-the-bias-variance-trade-off">K-Nearest Neighbor and the Bias-Variance Trade-Off<a class="headerlink" href="#k-nearest-neighbor-and-the-bias-variance-trade-off" title="Permanent link">&para;</a></h1>
+<h2 id="1">1 回归模型<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>定义回归模型</p>
 <div class="arithmatex">\[
-\eta (x) =  P(Y = 1 | X = x)，
+Y = f(X) + \epsilon ，
 \]</div>
-<p>这里我们认为 <span class="arithmatex">\(Y\)</span> 只有 0 和 1 两种可能，服从伯努利分布。</p>
-<p>逻辑回归就是要把 <span class="arithmatex">\((- \infty, + \infty)\)</span> 映射到 <span class="arithmatex">\([0, 1]\)</span> 范围上，使之以概率的形式表达，一般采用</p>
-<div class="arithmatex">\[
-\log \frac{\eta(x)}{1 - \eta(x)} = x^T \beta , \quad \eta(x) = \frac{\exp{x^T \beta}}{1 + \exp{x^T \beta}}.
-\]</div>
-<h3 id="_1">求解系数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>对于现在这个 Logistic 函数 <span class="arithmatex">\(\eta(x)\)</span> ，我们先写出它的对数似然函数</p>
-<div class="arithmatex">\[
-l \log {L(\beta)} = \sum_{i=1}^n \log{p(y_i | x_i, \beta)},
-\]</div>
-<p>并转化为</p>
-<div class="arithmatex">\[
-l = \sum_{i=1}^n y_i x_i^T \beta - \log{[1 + \exp{(x_i^T \beta)}]}.
-\]</div>
-<p>使用牛顿法更新 <span class="arithmatex">\(\beta\)</span> ，直到最大化似然函数</p>
-<div class="arithmatex">\[
-\beta^{new} = \beta^{old} - [\frac{\partial^2 l(\beta)}{\partial \beta \partial \beta^T}]^{-1} \cdot \frac{\partial l(\beta)}{\partial \beta}\Big|_{\beta^{old}}.
-\]</div>
-<blockquote>
-<p>公式推导待学习</p>
-</blockquote>
-<h2 id="2">2 评价分类模型<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<h3 id="_2">混淆矩阵<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>理论上模型的训练结果可以概括为</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>观测为真</th>
-<th>观测为假</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>预测为真</td>
-<td>TP</td>
-<td>FP</td>
-</tr>
-<tr>
-<td>预测为假</td>
-<td>FN</td>
-<td>TN</td>
-</tr>
-</tbody>
-</table>
-<p>给出三种指标进行评价：</p>
+<p>其中：</p>
 <ul>
 <li>
-<p>准确率 </p>
-<div class="arithmatex">\[Overall Accuracy = \frac{TP + TN}{TP + TN + FP + FN}\]</div>
+<p><span class="arithmatex">\(Y\)</span> 是观测值，实际会发生的情况，</p>
 </li>
 <li>
-<p>灵敏度</p>
-<div class="arithmatex">\[Sensitivity = \frac{TP}{TP + FN}\]</div>
+<p><span class="arithmatex">\(f(X)\)</span> 是真值，一个完美的函数关系，</p>
 </li>
 <li>
-<p>特异度</p>
-<div class="arithmatex">\[Specificity = \frac{TN}{TN + FP}\]</div>
+<p><span class="arithmatex">\(\epsilon\)</span> 是噪声，是满足 <span class="arithmatex">\(E(\epsilon) = 0\)</span> 和 <span class="arithmatex">\(Var(\epsilon) = \sigma^2\)</span> 的随机变量。</p>
 </li>
 </ul>
-<h3 id="roc">ROC 曲线<a class="headerlink" href="#roc" title="Permanent link">&para;</a></h3>
-<p>以上方法只能在一个确定的阈值（这里指区分真和假的界线）下使用，但是为了评价阈值变化时的模型表现，我们引入 ROC 曲线</p>
-<p><img alt="ROC 曲线" src="../ROC.png" /></p>
-<p>这体现了阈值变化时模型的灵敏度和特异度指标的改变。</p>
-<p>这里，曲线下的面积 AUC 越接近 1，说明模型的分类能力越好。</p>
-<h2 id="3-lda-qda">3 LDA 和 QDA<a class="headerlink" href="#3-lda-qda" title="Permanent link">&para;</a></h2>
-<p>？听不懂</p>
+<p>目标是在收集到的训练集 <span class="arithmatex">\(D_n = \{x_i, y_i \}_{i=1}^n\)</span> 上，找到这个模型的近似规律，记为 <span class="arithmatex">\(\hat{f}\)</span> ；并通过已知数据 <span class="arithmatex">\(X\)</span> ，利用这个规律预测 <span class="arithmatex">\(Y\)</span> 。</p>
+<div class="admonition hint">
+<p class="admonition-title">注意</p>
+<h1 id="_1">待补充<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+</div>
+<h2 id="2-k-">2 k-近邻算法<a class="headerlink" href="#2-k-" title="Permanent link">&para;</a></h2>
+<h3 id="_2">概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>kNN 是一种非参数化方法，它不预先假设 <span class="arithmatex">\(f(X)\)</span> 的具体数学形式，而是根据目标点 <span class="arithmatex">\(x_0\)</span> 的邻近点的值预测它对应的 <span class="arithmatex">\(y_0\)</span> 的值，记为 <span class="arithmatex">\(\hat{f}(x_0)\)</span> 。</p>
+<p>kNN 可以用于回归，即预测具体数值；也可以用于分类，即预测类别。</p>
+<h3 id="_3">预测回归模型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>对于已知的目标点 <span class="arithmatex">\(x_0\)</span> ，预测值为附近 <span class="arithmatex">\(k\)</span> 个样本的平均值</p>
+<div class="arithmatex">\[
+\hat{y_0} = \frac{1}{k} \sum_{x_i \in N_k(x_0)} y_i ，
+\]</div>
+<p>其中 <span class="arithmatex">\(N_k(x_0)\)</span> 是离 <span class="arithmatex">\(x_0\)</span> 最近的 <span class="arithmatex">\(k\)</span> 个样本的集合。</p>
+<div class="admonition hint">
+<p class="admonition-title">注意</p>
+<p>kNN 中的“最近”，可能是欧式距离最近，也可能是其他情况。</p>
+</div>
+<h2 id="3-">3 偏差-方差权衡<a class="headerlink" href="#3-" title="Permanent link">&para;</a></h2>
+<p>我们需要引入方法评价模型预测的准确性。</p>
+<h3 id="_4">方差<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>方差描述的是模型预测的稳定性，即在不同的训练集上预测 <span class="arithmatex">\(\hat{f}(x_0)\)</span> 的波动程度。</p>
+<p>对于目标点 <span class="arithmatex">\(x_0\)</span> 的预测值 <span class="arithmatex">\(\hat{f}(x_0)\)</span> ，方差为</p>
+<div class="arithmatex">\[
+Var(\hat{f}(x_0)) = E[(\hat{f}(x_0) - E[\hat{f}(x_0)])^2] 。
+\]</div>
+<h3 id="_5">偏差<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>偏差描述的是模型预测的系统性偏离，即预测与真值的差距。</p>
+<p>对于目标点 <span class="arithmatex">\(x_0\)</span> 的预测值 <span class="arithmatex">\(\hat{f}(x_0)\)</span> ，偏差为</p>
+<div class="arithmatex">\[
+Bias(\hat{f}(x_0)) = f(x_0) - E[\hat{f}(x_0)] 。
+\]</div>
+<h3 id="_6">平方误差损失<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>平方误差损失衡量了模型预测的误差来源</p>
+<div class="arithmatex">\[
+Err(x_0) = \sigma^2 + Bias^2 + Var 。
+\]</div>
+<details class="note">
+<summary>平方误差损失公式推导</summary>
+<div class="arithmatex">\[
+Err(x_0) = E_{D_n, Y_0}[(Y_0 - \hat{f}(x_0))^2]
+\]</div>
+<h1 id="_7">待学习<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+</details>
+<div class="admonition hint">
+<p class="admonition-title">从 1NN 到 kNN</p>
+<h1 id="_8">待补充<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+</div>
+<h2 id="4">4 模型选择<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>我们需要引入模型复杂度和自由度的概念，来决定 k 的合适取值。</p>
+<h3 id="_9">过拟合与欠拟合<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>k 很小，容易过拟合。</p>
+</li>
+<li>
+<p>k 很大，容易欠拟合。</p>
+</li>
+</ul>
+<h3 id="_10">模型复杂度<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>在 kNN 中，k 决定了模型复杂度。</p>
+<h3 id="_11">自由度<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>定义自由度为</p>
+<div class="arithmatex">\[
+df(\hat{f}) = \frac{1}{\sigma^2} \sum_{i=1}^n Cov{(\hat{Y}_i, Y_i)} 。
+\]</div>
+<details class="note">
+<summary>自由度定义公式化简</summary>
+<p>记 <span class="arithmatex">\(\hat{Y} = (\hat{Y}_1, \cdot , \hat{Y}_n)\)</span> 和 <span class="arithmatex">\(Y = (Y_1, \cdot , Y_n)\)</span> ，则自由度可表示为</p>
+<div class="arithmatex">\[
+df(\hat{f}) = \frac{1}{\sigma^2} Trace(Cov(\hat{Y}, Y)) 。
+\]</div>
+<h1 id="_12">待学习<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h1>
+</details>
+<p>在 kNN 中有 <span class="arithmatex">\(df = \frac{n}{k}\)</span> 。</p>
+<h3 id="k">K 折交叉验证<a class="headerlink" href="#k" title="Permanent link">&para;</a></h3>
+<p>为了选择较优的 k ，采用 K 折交叉验证：</p>
+<ul>
+<li>
+<p>将数据随机分为 K 份（一般取 <span class="arithmatex">\(K = 10\)</span> ），</p>
+</li>
+<li>
+<p>每次用 K-1 份作为训练集，</p>
+</li>
+<li>
+<p>用剩余的 1 份作为测试集并计算测试误差，</p>
+</li>
+<li>
+<p>遍历所有情况，计算平均测试误差。</p>
+</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">留一法</p>
+<p>当取 <span class="arithmatex">\(K = n\)</span> 时的特殊交叉验证方法，在训练集很小时比较有用，训练集很大时计算时间很长。</p>
+</div>
+<h2 id="5">5 分类模型<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>kNN 分类的本质是估计条件概率</p>
+<div class="arithmatex">\[
+P(Y = c|X = x_0) ，
+\]</div>
+<p>即给定特征 <span class="arithmatex">\(x_0\)</span> ，属于类别 <span class="arithmatex">\(c\)</span> 的概率。</p>
+<p>通过检查 <span class="arithmatex">\(x_0\)</span> 周围的 k 个点的类别，估计这个概率</p>
+<div class="arithmatex">\[
+\hat{P}(Y = c|X = x_0) = \frac{1}{k} \sum_{x_i \in N_k(x_0)} 1\{y_i = c\} 。
+\]</div>
+<p>让这个概率最大，就是最有可能的 <span class="arithmatex">\(x_0\)</span> 属于的类别</p>
+<div class="arithmatex">\[
+\hat{y} = \arg{\max{\sum_{x_i \in N_k(x_0)} 1\{y_i = c\}}} 。
+\]</div>
+<h3 id="_13">贝叶斯错误率<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>贝叶斯错误率描述了分类问题的误差边界，即完美分类器也无法消除的误差</p>
+<div class="arithmatex">\[
+Bayes Error = 1 - E[\max_c P(Y = c | X)] 。
+\]</div>
+<h3 id="1nn">1NN 的理论边界<a class="headerlink" href="#1nn" title="Permanent link">&para;</a></h3>
+<p>当样本量 <span class="arithmatex">\(n \to \infty\)</span> 时，1NN 的错误率最高不会超过贝叶斯错误率的两倍。</p>
+<h2 id="_14">总结<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="_15">距离度量<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h3 id="_16">纬度灾难<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<h3 id="_17">双重下降<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<details class="hint">
+<summary>英语词汇表</summary>
+<p>k-Nearest Neighbor k-近邻算法</p>
+<p>Regression Model 回归模型</p>
+<p>Independent and Identically Distributed 独立同分布</p>
+<p>Nonparametric Method 非参数方法</p>
+<p>Neighborhood 邻域</p>
+<p>Majority Vote 多数投票制</p>
+<p>Indicator Function 指示函数</p>
+<p>Bias-Variance Trade-off 偏差-方差权衡</p>
+<p>Irreducible Error 不可约误差</p>
+<p>Mean Squared Error 均方误差</p>
+<p>Overfitting 过拟合</p>
+<p>Underfitting 欠拟合</p>
+<p>Conditional Class Probabilities 条件类别概率</p>
+<p>Decision Boundary 决策边界</p>
+<p>Bayes Classifier 贝叶斯分类器</p>
+<p>Bayes Error Rate 贝叶斯错误率</p>
+<p>K-fold Cross Validation K-折交叉验证</p>
+<p>Curse of Dimensionality 维度灾难</p>
+<p>Double Descent 双下降现象</p>
+</details>
 
 
 
@@ -945,6 +1043,44 @@ l = \sum_{i=1}^n y_i x_i^T \beta - \log{[1 + \exp{(x_i^T \beta)}]}.
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../LinearAlgebra/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 线性代数基础">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                线性代数基础
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../linearreg/" class="md-footer__link md-footer__link--next" aria-label="下一页: 线性回归模型">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                线性回归模型
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

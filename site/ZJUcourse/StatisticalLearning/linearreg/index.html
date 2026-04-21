@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../LinearAlgebra/">
+        <link rel="prev" href="../knn/">
       
       
-        <link rel="next" href="../slides2/">
+        <link rel="next" href="../causal_intro/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>KNN 与偏差-方差权衡 - Learning at School</title>
+        <title>线性回归模型 - Learning at School</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#k-nearest-neighbor-and-the-bias-variance-trade-off" class="md-skip">
+        <a href="#linear-models-for-regression" class="md-skip">
           跳转至
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              KNN 与偏差-方差权衡
+              线性回归模型
             
           </span>
         </div>
@@ -450,7 +450,7 @@
   <span class="md-ellipsis">
     
   
-    第一周
+    算法分析
   
 
     
@@ -478,7 +478,7 @@
   <span class="md-ellipsis">
     
   
-    第二周
+    列表、栈、队列
   
 
     
@@ -506,7 +506,7 @@
   <span class="md-ellipsis">
     
   
-    第三周
+    树
   
 
     
@@ -534,7 +534,7 @@
   <span class="md-ellipsis">
     
   
-    第四周
+    堆
   
 
     
@@ -645,6 +645,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../knn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KNN 与偏差-方差权衡
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -664,7 +692,7 @@
   <span class="md-ellipsis">
     
   
-    KNN 与偏差-方差权衡
+    线性回归模型
   
 
     
@@ -682,7 +710,7 @@
   <span class="md-ellipsis">
     
   
-    KNN 与偏差-方差权衡
+    线性回归模型
   
 
     
@@ -711,10 +739,99 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1 回归模型
+        1 衡量一个回归模型
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="1 衡量一个回归模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        损失函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        风险
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        经验风险
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 求解线性回归模型的参数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 误差
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 选择模型的方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 选择模型的方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见的评分指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -722,34 +839,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../slides2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    线性回归模型
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -828,10 +917,99 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1 回归模型
+        1 衡量一个回归模型
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="1 衡量一个回归模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        损失函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        风险
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        经验风险
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 求解线性回归模型的参数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 误差
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 选择模型的方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 选择模型的方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见的评分指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -852,167 +1030,78 @@
 
 
 
-<h1 id="k-nearest-neighbor-and-the-bias-variance-trade-off">K-Nearest Neighbor and the Bias-Variance Trade-Off<a class="headerlink" href="#k-nearest-neighbor-and-the-bias-variance-trade-off" title="Permanent link">&para;</a></h1>
-<h2 id="1">1 回归模型<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>定义回归模型</p>
+<h1 id="linear-models-for-regression">Linear Models for Regression<a class="headerlink" href="#linear-models-for-regression" title="Permanent link">&para;</a></h1>
+<h2 id="1">1 衡量一个回归模型<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="_1">损失函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>损失函数量化预测结果与观测结果的差距，在回归模型中常用的是</p>
 <div class="arithmatex">\[
-Y = f(X) + \epsilon ，
+L(Y, f(X)) = (Y - f(X))^2 .
 \]</div>
-<p>其中：</p>
+<h3 id="_2">风险<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>风险是损失函数的期望</p>
+<div class="arithmatex">\[
+R(f) = E[L(Y, f(X))] .
+\]</div>
+<h3 id="_3">经验风险<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>在训练集 <span class="arithmatex">\(D_n\)</span> 上学习到的最优模型应该最小化风险，这时称为经验风险</p>
+<div class="arithmatex">\[
+R_n(f) = \frac{1}{n} \sum_{i=1}^n L(y_i, f(x_i)) .
+\]</div>
+<p>也即学习目标是</p>
+<div class="arithmatex">\[
+\hat{f}(x) = \arg{\min_f{R_n(f)}} .
+\]</div>
+<h2 id="2">2 求解线性回归模型的参数<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>对于一个线性回归</p>
+<div class="arithmatex">\[
+Y = X^T \beta + \epsilon ,
+\]</div>
+<p>依据经验风险最小化的原则求参数 </p>
+<div class="arithmatex">\[
+\hat{\beta} = (X^T X)^{-1} X^T y .
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">推导</p>
+<p>待学习</p>
+</div>
+<h2 id="3">3 误差<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>在训练集 <span class="arithmatex">\(D_n = \{x_i, y_i\}_{i=1}^n\)</span> 上，学习得到的模型为 <span class="arithmatex">\(\hat{y}\)</span> ，那么模型的训练误差的期望为</p>
+<p>$$
+E[Train Error] = E||y - \hat{y}||^2 = (n - p) \sigma^2 ,
+$$ 其中 <span class="arithmatex">\(p\)</span> 是特征数量，也即 <span class="arithmatex">\(X\)</span> 的维数。</p>
+<p>重新采样得到新的观测值 <span class="arithmatex">\(\{x_i, y_i^*\}_{i=1}^n\)</span> ，用来评估模型的预测效果，预测误差的期望为</p>
+<div class="arithmatex">\[
+E[Test Error] = E||y^* - \hat{y}||^2 = n \sigma^2 + p \sigma^2 .
+\]</div>
+<p>可以理解为在实际情况中由于有噪声，同一组输入，每次输出都有波动；但是模型只能对一组输入输出进行学习，这时就必须考虑对于其他波动的输出，预测效果好不好了。</p>
+<p>而学习一组输入输出的效果好坏，和预测效果好坏，都和输入的特征值数量有关。</p>
+<h2 id="4">4 选择模型的方法<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>在实际情况中，基本不可能有理想的独立测试集 <span class="arithmatex">\(y^*\)</span> ，因此需要量化误差的可行办法。</p>
+<p>给出评估一个模型的方法</p>
+<div class="arithmatex">\[
+分数 = 拟合优度 + 复杂度惩罚 ，
+\]</div>
+<p>目标是找到最小的分数，其中</p>
 <ul>
 <li>
-<p><span class="arithmatex">\(Y\)</span> 是观测值，实际会发生的情况，</p>
+<p>拟合优度表示模型在训练集上的效果，一般模型越复杂，越小；</p>
 </li>
 <li>
-<p><span class="arithmatex">\(f(X)\)</span> 是真值，一个完美的函数关系，</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\epsilon\)</span> 是噪声，是满足 <span class="arithmatex">\(E(\epsilon) = 0\)</span> 和 <span class="arithmatex">\(Var(\epsilon) = \sigma^2\)</span> 的随机变量。</p>
+<p>复杂度惩罚项表示模型的复杂度，即输入特征值数量，一般模型越复杂，越大。</p>
 </li>
 </ul>
-<p>目标是在收集到的训练集 <span class="arithmatex">\(D_n = \{x_i, y_i \}_{i=1}^n\)</span> 上，找到这个模型的近似规律，记为 <span class="arithmatex">\(\hat{f}\)</span> ；并通过已知数据 <span class="arithmatex">\(X\)</span> ，利用这个规律预测 <span class="arithmatex">\(Y\)</span> 。</p>
-<div class="admonition hint">
-<p class="admonition-title">注意</p>
-<h1 id="_1">待补充<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-</div>
-<h2 id="2-k-">2 k-近邻算法<a class="headerlink" href="#2-k-" title="Permanent link">&para;</a></h2>
-<h3 id="_2">概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>kNN 是一种非参数化方法，它不预先假设 <span class="arithmatex">\(f(X)\)</span> 的具体数学形式，而是根据目标点 <span class="arithmatex">\(x_0\)</span> 的邻近点的值预测它对应的 <span class="arithmatex">\(y_0\)</span> 的值，记为 <span class="arithmatex">\(\hat{f}(x_0)\)</span> 。</p>
-<p>kNN 可以用于回归，即预测具体数值；也可以用于分类，即预测类别。</p>
-<h3 id="_3">预测回归模型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>对于已知的目标点 <span class="arithmatex">\(x_0\)</span> ，预测值为附近 <span class="arithmatex">\(k\)</span> 个样本的平均值</p>
-<div class="arithmatex">\[
-\hat{y_0} = \frac{1}{k} \sum_{x_i \in N_k(x_0)} y_i ，
-\]</div>
-<p>其中 <span class="arithmatex">\(N_k(x_0)\)</span> 是离 <span class="arithmatex">\(x_0\)</span> 最近的 <span class="arithmatex">\(k\)</span> 个样本的集合。</p>
-<div class="admonition hint">
-<p class="admonition-title">注意</p>
-<p>kNN 中的“最近”，可能是欧式距离最近，也可能是其他情况。</p>
-</div>
-<h2 id="3-">3 偏差-方差权衡<a class="headerlink" href="#3-" title="Permanent link">&para;</a></h2>
-<p>我们需要引入方法评价模型预测的准确性。</p>
-<h3 id="_4">方差<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>方差描述的是模型预测的稳定性，即在不同的训练集上预测 <span class="arithmatex">\(\hat{f}(x_0)\)</span> 的波动程度。</p>
-<p>对于目标点 <span class="arithmatex">\(x_0\)</span> 的预测值 <span class="arithmatex">\(\hat{f}(x_0)\)</span> ，方差为</p>
-<div class="arithmatex">\[
-Var(\hat{f}(x_0)) = E[(\hat{f}(x_0) - E[\hat{f}(x_0)])^2] 。
-\]</div>
-<h3 id="_5">偏差<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>偏差描述的是模型预测的系统性偏离，即预测与真值的差距。</p>
-<p>对于目标点 <span class="arithmatex">\(x_0\)</span> 的预测值 <span class="arithmatex">\(\hat{f}(x_0)\)</span> ，偏差为</p>
-<div class="arithmatex">\[
-Bias(\hat{f}(x_0)) = f(x_0) - E[\hat{f}(x_0)] 。
-\]</div>
-<h3 id="_6">平方误差损失<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>平方误差损失衡量了模型预测的误差来源</p>
-<div class="arithmatex">\[
-Err(x_0) = \sigma^2 + Bias^2 + Var 。
-\]</div>
-<details class="note">
-<summary>平方误差损失公式推导</summary>
-<div class="arithmatex">\[
-Err(x_0) = E_{D_n, Y_0}[(Y_0 - \hat{f}(x_0))^2]
-\]</div>
-<h1 id="_7">待学习<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
-</details>
-<div class="admonition hint">
-<p class="admonition-title">从 1NN 到 kNN</p>
-<h1 id="_8">待补充<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
-</div>
-<h2 id="4">4 模型选择<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
-<p>我们需要引入模型复杂度和自由度的概念，来决定 k 的合适取值。</p>
-<h3 id="_9">过拟合与欠拟合<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_4">常见的评分指标<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>k 很小，容易过拟合。</p>
+<p>Mallows' <span class="arithmatex">\(C_p\)</span> </p>
 </li>
 <li>
-<p>k 很大，容易欠拟合。</p>
+<p>AIC </p>
+</li>
+<li>
+<p>BIC</p>
 </li>
 </ul>
-<h3 id="_10">模型复杂度<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>在 kNN 中，k 决定了模型复杂度。</p>
-<h3 id="_11">自由度<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>定义自由度为</p>
-<div class="arithmatex">\[
-df(\hat{f}) = \frac{1}{\sigma^2} \sum_{i=1}^n Cov{(\hat{Y}_i, Y_i)} 。
-\]</div>
-<details class="note">
-<summary>自由度定义公式化简</summary>
-<p>记 <span class="arithmatex">\(\hat{Y} = (\hat{Y}_1, \cdot , \hat{Y}_n)\)</span> 和 <span class="arithmatex">\(Y = (Y_1, \cdot , Y_n)\)</span> ，则自由度可表示为</p>
-<div class="arithmatex">\[
-df(\hat{f}) = \frac{1}{\sigma^2} Trace(Cov(\hat{Y}, Y)) 。
-\]</div>
-<h1 id="_12">待学习<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h1>
-</details>
-<p>在 kNN 中有 <span class="arithmatex">\(df = \frac{n}{k}\)</span> 。</p>
-<h3 id="k">K 折交叉验证<a class="headerlink" href="#k" title="Permanent link">&para;</a></h3>
-<p>为了选择较优的 k ，采用 K 折交叉验证：</p>
-<ul>
-<li>
-<p>将数据随机分为 K 份（一般取 <span class="arithmatex">\(K = 10\)</span> ），</p>
-</li>
-<li>
-<p>每次用 K-1 份作为训练集，</p>
-</li>
-<li>
-<p>用剩余的 1 份作为测试集并计算测试误差，</p>
-</li>
-<li>
-<p>遍历所有情况，计算平均测试误差。</p>
-</li>
-</ul>
-<div class="admonition hint">
-<p class="admonition-title">留一法</p>
-<p>当取 <span class="arithmatex">\(K = n\)</span> 时的特殊交叉验证方法，在训练集很小时比较有用，训练集很大时计算时间很长。</p>
-</div>
-<h2 id="5">5 分类模型<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<p>kNN 分类的本质是估计条件概率</p>
-<div class="arithmatex">\[
-P(Y = c|X = x_0) ，
-\]</div>
-<p>即给定特征 <span class="arithmatex">\(x_0\)</span> ，属于类别 <span class="arithmatex">\(c\)</span> 的概率。</p>
-<p>通过检查 <span class="arithmatex">\(x_0\)</span> 周围的 k 个点的类别，估计这个概率</p>
-<div class="arithmatex">\[
-\hat{P}(Y = c|X = x_0) = \frac{1}{k} \sum_{x_i \in N_k(x_0)} 1\{y_i = c\} 。
-\]</div>
-<p>让这个概率最大，就是最有可能的 <span class="arithmatex">\(x_0\)</span> 属于的类别</p>
-<div class="arithmatex">\[
-\hat{y} = \arg{\max{\sum_{x_i \in N_k(x_0)} 1\{y_i = c\}}} 。
-\]</div>
-<h3 id="_13">贝叶斯错误率<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>贝叶斯错误率描述了分类问题的误差边界，即完美分类器也无法消除的误差</p>
-<div class="arithmatex">\[
-Bayes Error = 1 - E[\max_c P(Y = c | X)] 。
-\]</div>
-<h3 id="1nn">1NN 的理论边界<a class="headerlink" href="#1nn" title="Permanent link">&para;</a></h3>
-<p>当样本量 <span class="arithmatex">\(n \to \infty\)</span> 时，1NN 的错误率最高不会超过贝叶斯错误率的两倍。</p>
-<h2 id="_14">总结<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
-<h3 id="_15">距离度量<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<h3 id="_16">纬度灾难<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<h3 id="_17">双重下降<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<details class="hint">
-<summary>英语词汇表</summary>
-<p>k-Nearest Neighbor k-近邻算法</p>
-<p>Regression Model 回归模型</p>
-<p>Independent and Identically Distributed 独立同分布</p>
-<p>Nonparametric Method 非参数方法</p>
-<p>Neighborhood 邻域</p>
-<p>Majority Vote 多数投票制</p>
-<p>Indicator Function 指示函数</p>
-<p>Bias-Variance Trade-off 偏差-方差权衡</p>
-<p>Irreducible Error 不可约误差</p>
-<p>Mean Squared Error 均方误差</p>
-<p>Overfitting 过拟合</p>
-<p>Underfitting 欠拟合</p>
-<p>Conditional Class Probabilities 条件类别概率</p>
-<p>Decision Boundary 决策边界</p>
-<p>Bayes Classifier 贝叶斯分类器</p>
-<p>Bayes Error Rate 贝叶斯错误率</p>
-<p>K-fold Cross Validation K-折交叉验证</p>
-<p>Curse of Dimensionality 维度灾难</p>
-<p>Double Descent 双下降现象</p>
-</details>
 
 
 
@@ -1048,7 +1137,7 @@ Bayes Error = 1 - E[\max_c P(Y = c | X)] 。
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../LinearAlgebra/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 线性代数基础">
+          <a href="../knn/" class="md-footer__link md-footer__link--prev" aria-label="上一页: KNN 与偏差-方差权衡">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1058,20 +1147,20 @@ Bayes Error = 1 - E[\max_c P(Y = c | X)] 。
                 上一页
               </span>
               <div class="md-ellipsis">
-                线性代数基础
+                KNN 与偏差-方差权衡
               </div>
             </div>
           </a>
         
         
           
-          <a href="../slides2/" class="md-footer__link md-footer__link--next" aria-label="下一页: 线性回归模型">
+          <a href="../causal_intro/" class="md-footer__link md-footer__link--next" aria-label="下一页: 因果推断">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                线性回归模型
+                因果推断
               </div>
             </div>
             <div class="md-footer__button md-icon">

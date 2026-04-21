@@ -42,6 +42,7 @@ nav:
       - 列表、栈、队列: ZJUcourse/FDS/fds_lecture2.md 
       - 树: ZJUcourse/FDS/fds_lecture3.md
       - 堆: ZJUcourse/FDS/fds_lecture4.md
+      - 并查集: ZJUcourse/FDS/fds_lecture5.md
     - 统计学习:
       - 线性代数基础: ZJUcourse/StatisticalLearning/LinearAlgebra.md
       - KNN 与偏差-方差权衡: ZJUcourse/StatisticalLearning/knn.md
