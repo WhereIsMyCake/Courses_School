@@ -128,7 +128,7 @@ body[data-md-page="index"] .md-footer {
   height: 100vh;
   
   /* 图片路径 */
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("/image/backgroundXJ.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../image/backgroundXJ.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
