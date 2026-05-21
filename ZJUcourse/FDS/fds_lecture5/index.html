@@ -16,7 +16,7 @@
         <link rel="prev" href="../fds_lecture4/">
       
       
-        <link rel="next" href="../../StatisticalLearning/LinearAlgebra/">
+        <link rel="next" href="../segment_tree/">
       
       
         
@@ -859,6 +859,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segment_tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线段树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph_algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1427,11 +1483,11 @@ relations: 12~4, 3~1, 6~10, 8~9, 7~4, 6~8, 3~5, 2~11, 11~12.</p>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">X</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">X</span><span class="p">;</span>
 <span class="w">    </span><span class="k">else</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">X</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Find</span><span class="p">(</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">X</span><span class="p">],</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">X</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Find</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">X</span><span class="p">],</span><span class="w"> </span><span class="n">S</span><span class="p">);</span><span class="w"> </span>
 <span class="p">}</span>
 </code></pre></div></p>
 <p>迭代实现
-<div class="highlight"><pre><span></span><code><span class="n">SetType</span><span class="w"> </span><span class="nf">Find</span><span class="w"> </span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">DisjSet</span><span class="w"> </span><span class="n">S</span><span class="p">){</span>
+<div class="highlight"><pre><span></span><code><span class="n">SetType</span><span class="w"> </span><span class="nf">Find</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">DisjSet</span><span class="w"> </span><span class="n">S</span><span class="p">){</span>
 <span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="n">trail</span><span class="p">,</span><span class="w"> </span><span class="n">lead</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// find the root</span>
@@ -1501,13 +1557,13 @@ relations: 12~4, 3~1, 6~10, 8~9, 7~4, 6~8, 3~5, 2~11, 11~12.</p>
         
         
           
-          <a href="../../StatisticalLearning/LinearAlgebra/" class="md-footer__link md-footer__link--next" aria-label="下一页: 线性代数基础">
+          <a href="../segment_tree/" class="md-footer__link md-footer__link--next" aria-label="下一页: 线段树">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                线性代数基础
+                线段树
               </div>
             </div>
             <div class="md-footer__button md-icon">
