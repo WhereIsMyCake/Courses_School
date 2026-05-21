@@ -1581,15 +1581,27 @@
 <p>拓扑排序是对图的点集进行线性排序，满足对于任意两点 <span class="arithmatex">\(i\)</span> 、<span class="arithmatex">\(j\)</span> ，如果 <span class="arithmatex">\(i\)</span> 是 <span class="arithmatex">\(j\)</span> 的前驱，则序列中 <span class="arithmatex">\(i\)</span> 在 <span class="arithmatex">\(j\)</span> 之前。</p>
 <p>事实上，能够进行拓扑排序的前提是图必须是有向无环图 DAG 。</p>
 <h2 id="3-shortest-path-algorithms">3 最短路径算法 Shortest Path Algorithms<a class="headerlink" href="#3-shortest-path-algorithms" title="Permanent link">&para;</a></h2>
-<p>给定：
- - 一个图 <span class="arithmatex">\(G = (V, E)\)</span> 
- - 成本函数 <span class="arithmatex">\(c(e) ， e \in E(G)\)</span></p>
+<p>给定：</p>
+<ul>
+<li>
+<p>一个图 <span class="arithmatex">\(G = (V, E)\)</span> </p>
+</li>
+<li>
+<p>成本函数 <span class="arithmatex">\(c(e) ， e \in E(G)\)</span> </p>
+</li>
+</ul>
 <p>那么从源点到终点的路径 <span class="arithmatex">\(P\)</span> 的长度为 <span class="arithmatex">\(\sum_{e_i \in P} c(e_i)\)</span> 。</p>
 <h3 id="single-source-shortest-path-problem">单源最短路径 Single-Source Shortest-Path Problem<a class="headerlink" href="#single-source-shortest-path-problem" title="Permanent link">&para;</a></h3>
 <h4 id="_4">问题描述<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>给定：
- - 带有权重的图 <span class="arithmatex">\(G = (V, E)\)</span>
- - 图中一个确定的源点 <span class="arithmatex">\(s\)</span></p>
+<p>给定：</p>
+<ul>
+<li>
+<p>带有权重的图 <span class="arithmatex">\(G = (V, E)\)</span> </p>
+</li>
+<li>
+<p>图中一个确定的源点 <span class="arithmatex">\(s\)</span> </p>
+</li>
+</ul>
 <p>找到图中从 <span class="arithmatex">\(s\)</span> 到其他任何一个点的最短路径。</p>
 <p><img alt="单源最短路径example" src="../single-shortest-path.png" /></p>
 <div class="admonition warning">
@@ -1602,21 +1614,47 @@
 <h4 id="unweighted-shortest-paths">无权的情况 Unweighted Shortest Paths<a class="headerlink" href="#unweighted-shortest-paths" title="Permanent link">&para;</a></h4>
 <p>所有边的权重都为 1 ，最短路径就是经过边数最少的路径。</p>
 <p><img alt="最短无权路径" src="../unweighted-shortest-path.png" /></p>
-<p>核心思路是采用广度优先搜索 Breadth-first search（BFS）：
- - 从源点开始，给能到达的相邻点设距离为 1 ；
- - 再从距离为 1 的点出发，给相邻能到达、且未访问过的点距离设为 2 ；
- - 以此类推。</p>
+<p>核心思路是采用广度优先搜索 Breadth-first search（BFS）：</p>
+<ul>
+<li>
+<p>从源点开始，给能到达的相邻点设距离为 1 ；</p>
+</li>
+<li>
+<p>再从距离为 1 的点出发，给相邻能到达、且未访问过的点距离设为 2 ；</p>
+</li>
+<li>
+<p>以此类推。</p>
+</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">算法</p>
-<p>维护一张表 <code>T</code> 来记录每个点的信息，其中：
- - <code>T[i].Dist</code> 表示从 <span class="arithmatex">\(s\)</span> 到点 <span class="arithmatex">\(v_i\)</span> 的距离
- - <code>T[i].Known</code> 标记 <span class="arithmatex">\(v_i\)</span> 是否被访问过
- - <code>T[i].Path</code> 记录 <span class="arithmatex">\(v_i\)</span> 在路径中的上一个点 </p>
-<p>维护一个队列：
- - 将源点 <span class="arithmatex">\(s\)</span> 入队
- - 只要队列不为空，就取出一个点 <span class="arithmatex">\(v\)</span>
-    - 遍历 <span class="arithmatex">\(v\)</span> 的所有邻接点 <span class="arithmatex">\(w\)</span> ，如果 <span class="arithmatex">\(w\)</span> 尚未被访问，则修改 <span class="arithmatex">\(w\)</span> 在表 <code>T</code> 中的信息，然后入队
- - 当队列为空时，循环结束</p>
+<p>维护一张表 <code>T</code> 来记录每个点的信息，其中：</p>
+<ul>
+<li>
+<p><code>T[i].Dist</code> 表示从 <span class="arithmatex">\(s\)</span> 到点 <span class="arithmatex">\(v_i\)</span> 的距离，</p>
+</li>
+<li>
+<p><code>T[i].Known</code> 标记 <span class="arithmatex">\(v_i\)</span> 是否被访问过，</p>
+</li>
+<li>
+<p><code>T[i].Path</code> 记录 <span class="arithmatex">\(v_i\)</span> 在路径中的上一个点。 </p>
+</li>
+</ul>
+<p>维护一个队列：</p>
+<ul>
+<li>
+<p>将源点 <span class="arithmatex">\(s\)</span> 入队；</p>
+</li>
+<li>
+<p>只要队列不为空，就取出一个点 <span class="arithmatex">\(v\)</span> ；</p>
+<ul>
+<li>遍历 <span class="arithmatex">\(v\)</span> 的所有邻接点 <span class="arithmatex">\(w\)</span> ，如果 <span class="arithmatex">\(w\)</span> 尚未被访问，则修改 <span class="arithmatex">\(w\)</span> 在表 <code>T</code> 中的信息，然后入队。</li>
+</ul>
+</li>
+<li>
+<p>当队列为空时，循环结束。</p>
+</li>
+</ul>
 </div>
 <details class="code">
 <summary>代码实现</summary>
@@ -1645,25 +1683,45 @@
 <p>采用 Dijkstra 算法（要求边权不为负数），核心是贪心策略，每次访问当前距离源点最近的点。</p>
 <div class="admonition note">
 <p class="admonition-title">算法</p>
-<p>仍然维护一张表 <code>T</code> 来记录每个点的信息，其中：
- - <code>T[i].Dist</code> 表示当前从 <span class="arithmatex">\(s\)</span> 到点 <span class="arithmatex">\(v_i\)</span> 的最短距离
-    - 初始时，源点记为 0 ，其他点记为 <span class="arithmatex">\(\infty\)</span>
- - <code>T[i].Known</code> 标记 <span class="arithmatex">\(v_i\)</span> 是否被访问过
- - <code>T[i].Path</code> 记录 <span class="arithmatex">\(v_i\)</span> 在当前路径中的上一个点</p>
-<p>不断重复以下步骤，直到收敛：
- - 在所有未访问点中，选择当前路径最短的点 <span class="arithmatex">\(v\)</span>
-    - 事实上，此时 <span class="arithmatex">\(v\)</span> 的路径距离就是最终最短的距离
- - 将 <span class="arithmatex">\(v\)</span> 标记为已访问，此后的路径距离不再改动
- - 遍历与 <span class="arithmatex">\(v\)</span> 邻接的所有未访问点，如果经过 <span class="arithmatex">\(v\)</span> 的新路径更短，则更新距离和前驱节点 </p>
+<p>仍然维护一张表 <code>T</code> 来记录每个点的信息，其中：</p>
+<ul>
+<li>
+<p><code>T[i].Dist</code> 表示当前从 <span class="arithmatex">\(s\)</span> 到点 <span class="arithmatex">\(v_i\)</span> 的最短距离；</p>
+<ul>
+<li>初始时，源点记为 0 ，其他点记为 <span class="arithmatex">\(\infty\)</span> 。</li>
+</ul>
+</li>
+<li>
+<p><code>T[i].Known</code> 标记 <span class="arithmatex">\(v_i\)</span> 是否被访问过；</p>
+</li>
+<li>
+<p><code>T[i].Path</code> 记录 <span class="arithmatex">\(v_i\)</span> 在当前路径中的上一个点。</p>
+</li>
+</ul>
+<p>不断重复以下步骤，直到收敛：</p>
+<ul>
+<li>
+<p>在所有未访问点中，选择当前路径最短的点 <span class="arithmatex">\(v\)</span> ；</p>
+<ul>
+<li>事实上，此时 <span class="arithmatex">\(v\)</span> 的路径距离就是最终最短的距离。</li>
+</ul>
+</li>
+<li>
+<p>将 <span class="arithmatex">\(v\)</span> 标记为已访问，此后的路径距离不再改动；</p>
+</li>
+<li>
+<p>遍历与 <span class="arithmatex">\(v\)</span> 邻接的所有未访问点，如果经过 <span class="arithmatex">\(v\)</span> 的新路径更短，则更新距离和前驱节点。</p>
+</li>
+</ul>
 </div>
 <div class="admonition note">
 <p class="admonition-title">寻找路径距离最小的未访问点</p>
 <ul>
 <li>
-<p>直接遍历全部未访问点，复杂度是 <span class="arithmatex">\(O(|V|^2)\)</span> ，适合用于稠密图（边比较少）</p>
+<p>直接遍历全部未访问点，复杂度是 <span class="arithmatex">\(O(|V|^2)\)</span> ，适合用于稠密图（边比较少）。</p>
 </li>
 <li>
-<p>把未访问点放进最小堆，复杂度是 <span class="arithmatex">\(O(|E| \log{|V|})\)</span> ，适合用于稀疏图（边比较多）</p>
+<p>把未访问点放进最小堆，复杂度是 <span class="arithmatex">\(O(|E| \log{|V|})\)</span> ，适合用于稀疏图（边比较多）。</p>
 </li>
 </ul>
 </div>
@@ -1693,11 +1751,21 @@
 <div class="admonition note">
 <p class="admonition-title">算法</p>
 <ul>
-<li>初始化把源点 <span class="arithmatex">\(s\)</span> 入队</li>
-<li>只要队列不为空就一直执行：<ul>
-<li>出队一个点 <span class="arithmatex">\(v\)</span> </li>
-<li>遍历 <span class="arithmatex">\(v\)</span> 的邻接点 <span class="arithmatex">\(w\)</span></li>
-<li>如果 <span class="arithmatex">\(w\)</span> 的经过 <span class="arithmatex">\(v\)</span> 的路径距离比原来短，就更新 <span class="arithmatex">\(w\)</span> 的距离，并且把 <span class="arithmatex">\(w\)</span> 入队（原来 <span class="arithmatex">\(w\)</span> 就在队中就不用再入队了）</li>
+<li>
+<p>初始化把源点 <span class="arithmatex">\(s\)</span> 入队；</p>
+</li>
+<li>
+<p>只要队列不为空就一直执行：</p>
+<ul>
+<li>
+<p>出队一个点 <span class="arithmatex">\(v\)</span> ，</p>
+</li>
+<li>
+<p>遍历 <span class="arithmatex">\(v\)</span> 的邻接点 <span class="arithmatex">\(w\)</span> ，</p>
+</li>
+<li>
+<p>如果 <span class="arithmatex">\(w\)</span> 的经过 <span class="arithmatex">\(v\)</span> 的路径距离比原来短，就更新 <span class="arithmatex">\(w\)</span> 的距离，并且把 <span class="arithmatex">\(w\)</span> 入队（原来 <span class="arithmatex">\(w\)</span> 就在队中就不用再入队了）。</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -1739,13 +1807,32 @@
 </div>
 <p>网络流的一个重要性质是，除了源点和汇点，其他任意一个点都满足流入等于流出。</p>
 <h3 id="_5">算法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>一个简单的思路是：
- - 找到任意一条从源点到汇点的通路（增广路 augmenting path）
- - 把这条路径上最小的容量作为整个路径的容量，在图中减去这一条路径的容量
- - 更新图，移除剩余容量为 0 的边
- - 重复以上过程，直到找不到从源点到汇点的通路</p>
-<p>但是，这个思路的问题是，选择任意通路不一定是全局最好的通路。为此，引入残量图 residual graph ，使得算法选边能够后悔，其中边的权重等于流量</p>
+<p>一个简单的思路是：</p>
+<ul>
+<li>
+<p>找到任意一条从源点到汇点的通路（增广路 augmenting path）；</p>
+</li>
+<li>
+<p>把这条路径上最小的容量作为整个路径的容量，在图中减去这一条路径的容量；</p>
+</li>
+<li>
+<p>更新图，移除剩余容量为 0 的边；</p>
+</li>
+<li>
+<p>重复以上过程，直到找不到从源点到汇点的通路。</p>
+</li>
+</ul>
+<p>但是，这个思路的问题是，选择任意通路不一定是全局最好的通路。为此，引入残量图 residual graph ，使得算法选边能够后悔</p>
 <p><img alt="残留网络" src="../residual-graph.png" /></p>
+<p>在残留图中：</p>
+<ul>
+<li>
+<p>正向权重表示还能通过多少流量，等于容量减去实际流量；</p>
+</li>
+<li>
+<p>反向权重表示能够返回多少流量，等于实际流量。</p>
+</li>
+</ul>
 <h3 id="_6">对容量都为整数的情况的分析<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>在寻找增广路的时候，优先选择容量大、边数量少的路径。</p>
 <h2 id="5-minimum-spanning-tree">5 最小生成树 Minimum Spanning Tree<a class="headerlink" href="#5-minimum-spanning-tree" title="Permanent link">&para;</a></h2>
@@ -1755,17 +1842,33 @@
 <div class="admonition note">
 <p class="admonition-title">生成树的性质</p>
 <ul>
-<li>最小生成树的“最小”，指生成树的所有边权重之和最小；</li>
-<li>最小生成树是无环的，边的数量等于点的数量减一；</li>
-<li>图存在最小生成树的充要条件是该图连通；</li>
-<li>在生成树中加一条边，就会形成一个环。</li>
+<li>
+<p>最小生成树的“最小”，指生成树的所有边权重之和最小；</p>
+</li>
+<li>
+<p>最小生成树是无环的，边的数量等于点的数量减一；</p>
+</li>
+<li>
+<p>图存在最小生成树的充要条件是该图连通；</p>
+</li>
+<li>
+<p>在生成树中加一条边，就会形成一个环。</p>
+</li>
 </ul>
 </div>
 <h3 id="prims-algorithm">Prim's Algorithm<a class="headerlink" href="#prims-algorithm" title="Permanent link">&para;</a></h3>
-<p>通过贪心的策略构建最小生成树：
- - 确定一个点作为根节点；
- - 每次长出的边，要满足和已有生成树的点相连但不属于已有生成树，不产生环，权重最小；
- - 重复上述过程，直到最小生成树覆盖所有点。</p>
+<p>通过贪心的策略构建最小生成树：</p>
+<ul>
+<li>
+<p>确定一个点作为根节点；</p>
+</li>
+<li>
+<p>每次长出的边，要满足和已有生成树的点相连但不属于已有生成树，不产生环，权重最小；</p>
+</li>
+<li>
+<p>重复上述过程，直到最小生成树覆盖所有点。</p>
+</li>
+</ul>
 <h3 id="kruskals-algorithm">Kruskal's Algorithm<a class="headerlink" href="#kruskals-algorithm" title="Permanent link">&para;</a></h3>
 <p>同样是一种采取贪心策略构建最小生成树的算法，核心思路是每次挑剩下的权重最小的边，把两颗树连起来。</p>
 <details class="code">
