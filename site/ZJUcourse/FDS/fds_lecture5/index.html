@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="../fds_lecture4/">
+      
+      
+        <link rel="next" href="../../StatisticalLearning/LinearAlgebra/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>Fds lecture5 - Learning at School</title>
+        <title>并查集 - Learning at School</title>
       
     
     
@@ -75,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#the-disjoint-set-adt" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fds lecture5
+              并查集
             
           </span>
         </div>
@@ -209,10 +218,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../stylistics/" class="md-tabs__link">
           
   
@@ -289,26 +300,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -326,7 +342,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -369,26 +385,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
             
   
   
@@ -406,7 +427,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -529,6 +550,315 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    并查集
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    并查集
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-equivalence-relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 等价关系 Equivalence Relations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 等价关系 Equivalence Relations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一些定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-dynamic-equivalence-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 动态等价问题 The Dynamic Equivalence Problem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 动态等价问题 The Dynamic Equivalence Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 基础数据结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 基础数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 并查集
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-unioni-j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Union(i, j)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Union(i, j)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation I
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation II
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-findi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Find(i)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Find(i)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-i_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation I
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-ii_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation II
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-smart-union-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Smart Union Algorithms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Smart Union Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-union-by-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Union by Size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-union-by-height" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Union by Height
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-path-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Path Compression
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -550,17 +880,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
             
   
   
@@ -733,6 +1066,250 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-equivalence-relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 等价关系 Equivalence Relations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 等价关系 Equivalence Relations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一些定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-dynamic-equivalence-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 动态等价问题 The Dynamic Equivalence Problem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 动态等价问题 The Dynamic Equivalence Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 基础数据结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 基础数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 并查集
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-unioni-j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Union(i, j)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Union(i, j)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation I
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation II
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-findi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Find(i)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Find(i)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-i_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation I
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-ii_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation II
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-smart-union-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Smart Union Algorithms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Smart Union Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-union-by-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Union by Size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-union-by-height" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Union by Height
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-path-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Path Compression
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -749,9 +1326,129 @@
 
 
 
-  <h1>Fds lecture5</h1>
+<h1 id="the-disjoint-set-adt">The Disjoint Set ADT<a class="headerlink" href="#the-disjoint-set-adt" title="Permanent link">&para;</a></h1>
+<h2 id="1-equivalence-relations">1 等价关系 Equivalence Relations<a class="headerlink" href="#1-equivalence-relations" title="Permanent link">&para;</a></h2>
+<h3 id="_1">一些定义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>如果对于集合 <span class="arithmatex">\(S\)</span> 中的任意一对元素 <span class="arithmatex">\((a, b)\)</span> ，关系 <span class="arithmatex">\(a R b\)</span> 要么为真、要么为假，如果关系为真，那么就说 <span class="arithmatex">\(a\)</span> 与 <span class="arithmatex">\(b\)</span> 相关，记作 <span class="arithmatex">\(a\)</span> ~ <span class="arithmatex">\(b\)</span> 。</p>
+</li>
+<li>
+<p>如果一个集合 <span class="arithmatex">\(S\)</span> 上的某个关系同时满足对称性、自反性、传递性，则称该关系为 <span class="arithmatex">\(S\)</span> 上的等价关系。</p>
+<ul>
+<li>
+<p>对称性 symmetric </p>
+</li>
+<li>
+<p>自反性 reflexive </p>
+</li>
+<li>
+<p>传递性 transitive </p>
+</li>
+</ul>
+</li>
+<li>
+<p>如果集合 <span class="arithmatex">\(S\)</span> 中的两个元素 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 满足 <span class="arithmatex">\(x\)</span> ~ <span class="arithmatex">\(y\)</span> ，则称它们属于同一个等价类 equivalence class 。</p>
+</li>
+</ul>
+<h2 id="2-the-dynamic-equivalence-problem">2 动态等价问题 The Dynamic Equivalence Problem<a class="headerlink" href="#2-the-dynamic-equivalence-problem" title="Permanent link">&para;</a></h2>
+<h3 id="_2">问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>给定多个等价对，判断任意两个元素 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 是否满足等价关系。</p>
+<p>对此，我们需要完成两类操作：</p>
+<ul>
+<li>
+<p>Find(i) ：判断一个元素属于哪个集合</p>
+</li>
+<li>
+<p>Union(i, j) ：将两个不相交的集合合并为一个集合</p>
+</li>
+</ul>
+<h3 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Given S = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 } and 9
+relations: 12~4, 3~1, 6~10, 8~9, 7~4, 6~8, 3~5, 2~11, 11~12.</p>
+<p>考虑动态、在线的算法：
+<div class="highlight"><pre><span></span><code><span class="nl">Algorithm</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">Union</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Find</span><span class="p">)</span>
+<span class="p">{</span><span class="w">   </span>
+<span class="w">    </span><span class="c1">// each element is a set at first</span>
+<span class="w">    </span><span class="n">Initialize</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="n">disjoint</span><span class="w"> </span><span class="n">sets</span><span class="p">;</span>
 
+<span class="w">    </span><span class="c1">// step 1: read the relations in </span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">read</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Find</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Find</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="w">            </span><span class="n">Union</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">sets</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
 
+<span class="w">    </span><span class="c1">// step 2: decide if a ~ b </span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">read</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">b</span><span class="p">){</span><span class="w"> </span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Find</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Find</span><span class="p">(</span><span class="n">b</span><span class="p">))</span><span class="w">   </span>
+<span class="w">            </span><span class="n">output</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="w">        </span><span class="k">else</span><span class="w">   </span>
+<span class="w">            </span><span class="n">output</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="3">3 基础数据结构<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 并查集<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>一般用树来表示，一棵树表示一个集合，每个节点保存指向父节点的指针。</p>
+<h3 id="32-unioni-j">3.2 Union(i, j)<a class="headerlink" href="#32-unioni-j" title="Permanent link">&para;</a></h3>
+<h4 id="implementation-i">Implementation I<a class="headerlink" href="#implementation-i" title="Permanent link">&para;</a></h4>
+<p>用一个数组来存储每个元素所属的集合名称，数组索引就是元素编号，需要遍历数组将所有属于集合 <span class="arithmatex">\(i\)</span> 的元素修改成属于集合 <span class="arithmatex">\(j\)</span> 。</p>
+<p>这种合并方式每次时间复杂度为 <span class="arithmatex">\(O(N)\)</span> ，效率很低。</p>
+<h4 id="implementation-ii">Implementation II<a class="headerlink" href="#implementation-ii" title="Permanent link">&para;</a></h4>
+<p>用一个数组来存储每个元素的父节点编号，数组索引是元素本身的编号，如果是根节点则存储 0 。</p>
+<p>现在进行合并可以直接修改一棵树的根节点存储的父节点编号，时间复杂度为 <span class="arithmatex">\(O(1)\)</span> 。</p>
+<h3 id="33-findi">3.3 Find(i)<a class="headerlink" href="#33-findi" title="Permanent link">&para;</a></h3>
+<h4 id="implementation-i_1">Implementation I<a class="headerlink" href="#implementation-i_1" title="Permanent link">&para;</a></h4>
+<p>通过数组索引访问的内容就是该元素所属的集合。</p>
+<h4 id="implementation-ii_1">Implementation II<a class="headerlink" href="#implementation-ii_1" title="Permanent link">&para;</a></h4>
+<p>沿着路径向上找根节点，时间复杂度和树的深度有关</p>
+<div class="highlight"><pre><span></span><code><span class="n">SetType</span><span class="w">  </span><span class="nf">Find</span><span class="w"> </span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">DisjSet</span><span class="w"> </span><span class="n">S</span><span class="p">){</span><span class="w">   </span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">X</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">X</span><span class="p">]);</span><span class="w">   </span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">X</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="34">3.4 分析<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p>按照第二种思路，<code>union()</code> 和 <code>find()</code> 操作成对出现时，并查集构建的树在最坏的情况下会退化成一个链表，时间复杂度变为 <span class="arithmatex">\(O(N^2)\)</span> 。</p>
+<h2 id="4-smart-union-algorithms">4 Smart Union Algorithms<a class="headerlink" href="#4-smart-union-algorithms" title="Permanent link">&para;</a></h2>
+<p>考虑在合并集合的时候控制树的形态，防止 <code>find()</code> 的时间复杂度太大。</p>
+<h3 id="41-union-by-size">4.1 Union by Size<a class="headerlink" href="#41-union-by-size" title="Permanent link">&para;</a></h3>
+<p>主要思路是统计两棵树各自的节点数量，把节点数少的树连接到节点数多的树的根部。</p>
+<p>原来根节点存储的父节点编号规定为 0 ，现在我们把它改成一个负数，绝对值就是这棵树的节点数；即初始化时每个节点的父节点编号都为 -1 。</p>
+<p>这样子构造树，<code>find()</code> 的时间复杂度变为 <span class="arithmatex">\(O(\log{N})\)</span> 。</p>
+<h3 id="42-union-by-height">4.2 Union by Height<a class="headerlink" href="#42-union-by-height" title="Permanent link">&para;</a></h3>
+<p>主要思路是将高度较矮的树连接到高度较高的树的根部。</p>
+<p>仍然可以用根节点存储的内容记录这棵树的高度。</p>
+<h2 id="5-path-compression">5 Path Compression<a class="headerlink" href="#5-path-compression" title="Permanent link">&para;</a></h2>
+<p>考虑提升 <code>find()</code> 算法的效率。</p>
+<p>主要思路是把一条路径上的节点都直接连接到根节点上，相当于把树的深度降下来。</p>
+<p>递归实现
+<div class="highlight"><pre><span></span><code><span class="n">SetType</span><span class="w"> </span><span class="nf">Find</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">DisjSet</span><span class="w"> </span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">X</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">X</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">X</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Find</span><span class="p">(</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">X</span><span class="p">],</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>迭代实现
+<div class="highlight"><pre><span></span><code><span class="n">SetType</span><span class="w"> </span><span class="nf">Find</span><span class="w"> </span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">DisjSet</span><span class="w"> </span><span class="n">S</span><span class="p">){</span>
+<span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="n">trail</span><span class="p">,</span><span class="w"> </span><span class="n">lead</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// find the root</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">;</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">root</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">root</span><span class="p">]);</span><span class="w">  </span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">trail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">;</span><span class="w"> </span><span class="n">trail</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">root</span><span class="p">;</span><span class="w"> </span><span class="n">trail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lead</span><span class="p">){</span>
+<span class="w">       </span><span class="n">lead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">trail</span><span class="p">];</span><span class="w">   </span>
+<span class="w">       </span><span class="n">S</span><span class="p">[</span><span class="n">trail</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">;</span><span class="w">   </span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>路径压缩方法与 Union by Height 不兼容，因为会改变树的高度，要优化建议使用 Union by Size。</p>
+</div>
 
 
 
@@ -782,6 +1479,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../fds_lecture4/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 堆">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                堆
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../StatisticalLearning/LinearAlgebra/" class="md-footer__link md-footer__link--next" aria-label="下一页: 线性代数基础">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                线性代数基础
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

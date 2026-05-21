@@ -133,13 +133,13 @@ SetType Find(ElementType X, DisjSet S) {
     if (S[X] <= 0)
         return X;
     else
-        return S[X] = Find( S[X], S ); 
+        return S[X] = Find(S[X], S); 
 }
 ```
 
 迭代实现
 ```c
-SetType Find (ElementType X, DisjSet S){
+SetType Find(ElementType X, DisjSet S){
     ElementType root, trail, lead;
 
     // find the root
