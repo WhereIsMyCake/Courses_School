@@ -44,6 +44,7 @@ nav:
     - 并查集: ZJUcourse/FDS/fds_lecture5.md
     - 线段树: ZJUcourse/FDS/segment_tree.md
     - 图: ZJUcourse/FDS/graph_algorithms.md
+    - 排序: ZJUcourse/FDS/sorting.md
   - 统计学习:
     - 线性代数基础: ZJUcourse/StatisticalLearning/LinearAlgebra.md
     - KNN 与偏差-方差权衡: ZJUcourse/StatisticalLearning/knn.md
