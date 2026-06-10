@@ -247,3 +247,205 @@ $$T(N) = 2 T(\frac{N}{2}) + O(N)，$$
 | Shell | ❌ | ✔️ |
 | Heap | ❌ | ✔️ |
 | Merge | ✔️ | ❌ |
+
+
+## 6 快速排序 Quick Sort
+
+### 思路
+
+采用递归分治的办法，对于每次得到的一个数组，选出一个枢纽 pivot ，把该数组分为小于自身和大于自身的两个不相交子集，然后继续处理这两个数组，以此类推。
+
+表示为伪代码：
+```c
+void Quicksort ( ElementType A[ ], int N )
+{
+      // 元素个数小于2 无需排序，直接返回
+      if ( N < 2 ) return;      
+    
+      // 在数组 A 中任意挑选一个元素
+      pivot = pick any element in A[ ];     
+    
+      // 将去掉 pivot 后的数组划分为两个互不相交的子集
+      Partition S = { A[ ] \ pivot } into two disjoint sets:  
+            A1 = { a ∈ S | a ≤ pivot }
+            A2 = { a ∈ S | a ≥ pivot }
+    
+      // 最终结果 = 对 A1 进行快排拼接上 pivot 拼接上对 A2 进行快排
+      A = Quicksort ( A1, N1) ∪ { pivot } ∪ Quicksort ( A2, N2);    
+}
+```
+
+!!! hint "性质"
+
+      pivot 位置一旦确定，就不会再改变。
+
+最好的情况下，这个算法的时间复杂度为 $T(N) = O(N \log{N})$ 。
+
+### 选择 Pivot
+
+Pivot 的选择直接关系到快速排序的效率，下面给出一些策略。
+
+1. 一种错误的方法是 `Pivot = A[0]` ；
+      
+      - 最坏的情况下，输入 `A` 已经有序，那么快速排序将花费 `O(N)` 的时间但是没有实质性工作。
+
+2. 一种安全的方法是随机选择 `Pivot` ；
+
+      - 缺点是生成随机数很耗费计算资源，系统开销大。
+
+3. 更好的办法是 Median-of-Three Partitioning ，即 `Pivot = median(left, center, right)` ；
+
+      - 选择数组最左端、中间、最右端的中位数，能消除输入有序导致的最坏情况，实际运行效率也比较高。
+
+### 分区 Partitioning
+
+选定 pivot 之后，一般采用双指针法进行分区。基本思路是由两个指针从数组两端出发向中间移动：
+
+ - 左指针从左往右走，遇到比 pivot 大的元素停下，
+
+ - 右指针从右往左走，遇到比 pivot 小的元素停下，  
+
+ - 两个指针都停下时，互相交换，然后继续走，重复上述逻辑直到相遇。 
+
+!!! warning "极端情况"
+
+      这样分区，当输入数组所有元素相等时，一端的指针会一直走完数组，导致两个子集极度不平衡，时间复杂度达到 $O(N^2)$ 。
+
+      因此，规定指针遇到等于 pivot 的元素时也停下做交换，这样能保证平衡划分。
+
+### 处理小数组
+
+实际上，当数组规模很小（例如小于 20 ）时，快速排序甚至比插入排序更慢。
+
+解决办法是当目前待处理的数组规模很小时，不用快速排序，而是采用其他对小数组更高效的排序。
+
+### 综合实现
+
+!!! code "代码实现"
+
+      ```c
+      // 入口函数
+      void  Quicksort( ElementType A[ ], int N ) 
+      { 
+            Qsort( A, 0, N - 1 ); 
+            /* A: 	数组 	*/
+            /* 0: 	左指针 */
+            /* N – 1:   右指针 */
+      }
+
+
+      /* 找到 pivot 并将需要划分的元素拼成连续的一段 */ 
+      ElementType Median3( ElementType A[ ], int Left, int Right ) 
+      { 
+            int  Center = ( Left + Right ) / 2; 
+          
+            if ( A[ Left ] > A[ Center ] ) 
+                  Swap( &A[ Left ], &A[ Center ] ); 
+            if ( A[ Left ] > A[ Right ] ) 
+                  Swap( &A[ Left ], &A[ Right ] ); 
+            if ( A[ Center ] > A[ Right ] ) 
+                  Swap( &A[ Center ], &A[ Right ] ); 
+            /* 确保 A[ Left ] <= A[ Center ] <= A[ Right ] */ 
+          
+            Swap( &A[ Center ], &A[ Right - 1 ] ); 
+            /* 现在只需要划分 A[ Left + 1 ] … A[ Right – 2 ] */
+          
+            return  A[ Right - 1 ];  /* 返回 pivot */ 
+      }
+      
+      void  Qsort( ElementType A[ ], int Left, int Right ) 
+      {   
+            int  i,  j; 
+            ElementType  Pivot; 
+            
+            if ( Left + Cutoff <= Right ) {  /* 不是小数组 */
+                  Pivot = Median3( A, Left, Right );  
+                  i = Left;     
+                  j = Right – 1;  
+                  /* 不用 Left+1 和 Right-2 是为了配合接下来的前缀自增/自减 */
+                  
+                  for( ; ; ) { 
+                        while ( A[ + +i ] < Pivot ) { }  
+                        while ( A[ – –j ] > Pivot ) { }  
+                        if ( i < j ) 
+                              Swap( &A[ i ], &A[ j ] );  
+                        else     
+                              break;  
+                  } 
+
+                  /* 划分结束后左指针 i 就停在 pivot 应该去的位置，因此交换 */ 
+                  Swap( &A[ i ], &A[ Right - 1 ] ); 
+                  
+                  Qsort( A, Left, i - 1 );      /* 排序左边部分数组 */
+                  Qsort( A, i + 1, Right );   /* 排序右边部分数组 */
+            }  
+            else 
+                  /* 小数组用插入排序 */ 
+                  InsertionSort( A + Left, Right - Left + 1 );
+      }
+      ```
+
+### 算法分析
+
+快速排序的时间复杂度可以表示为
+
+$$
+T(N) = T(i) + T(N - i - 1) + cN ,
+$$
+
+即 pivot 左边和右边排序的时间 + 当前层进行分区（双指针扫描整个数组花费线性时间）的时间。
+
+#### 最坏情况
+
+每次分区都极度不平衡，退化为
+
+$$
+T(N) = T(N-1) + cN = O(N^2) .
+$$
+
+#### 最好情况
+
+每次分区都很平衡
+
+$$
+T(N) = 2 T(\frac{N}{2}) + cN = O(N \log{N}) .
+$$
+
+#### 平均情况
+
+我们假定 pivot 出现在数组任何一个位置的概率均等，那么对于任意的 $i$ 有
+
+$$
+\bar{T}(i) = \frac{1}{N} \sum_{j=0}^{N-1} T(j) ,
+$$
+
+代入公式得到
+
+$$
+T(N) = [\frac{2}{N} \sum_{j=0}^{N-1} T(j)] + cN = O(N \log{N}) .
+$$
+
+
+??? example "采用快速排序想法的一个小例题"
+
+      >❓️给定一个包含 $N$ 个元素的列表和一个整数 $k$ ，找出其中第 $k$ 大的元素。
+
+      💭利用分区思想，记第一次分区后 pivot 的位置为 $i$ ，只要比较 $i$ 与 $k$ 的大小：
+
+       - 如果相等，则 pivot 就是这个元素；
+      
+       - 如果 $k < i$ ，则不用管右边，继续排序左边部分数组；
+      
+       - 如果 $k > i$ ，则不用管左边，继续排序右边部分数组。
+      
+
+## 7 大型结构的排序
+
+上述的排序算法都是基于比较和交换的，但是对于大型结构，交换的开销非常大。
+
+解决办法是增加一个指针字段指向结构体，交换时只交换指针而不动结构体本身（indirect sorting）。最后如果需要，再按照指针拍好的序调整结构体顺序。
+
+
+## 8 排序算法的一般下界
+
+任何只基于元素比较的排序算法，最坏情况下的计算时间复杂度下界必然是 $\Omega(N \log{N})$ 。

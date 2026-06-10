@@ -50,8 +50,11 @@ nav:
     - KNN 与偏差-方差权衡: ZJUcourse/StatisticalLearning/knn.md
     - 线性回归模型: ZJUcourse/StatisticalLearning/linearreg.md
     - 因果推断: ZJUcourse/StatisticalLearning/causal_intro.md
+  - 数据建模与分析:
+    - 基于梯度的凸优化: ZJUcourse/MachineLearning/ConvexOptimization.md
+    - 深度学习: ZJUcourse/MachineLearning/deeplearning.md
 
 
     
-  
+
  

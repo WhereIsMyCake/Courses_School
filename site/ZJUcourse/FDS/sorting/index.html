@@ -714,6 +714,117 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-shell-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 希尔排序 Shell Sort
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 希尔排序 Shell Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最坏情况分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        改进最坏情况
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-heap-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 堆排序 Heap Sort
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-merge-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 归并排序 Merge Sort
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 归并排序 Merge Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        合并两个有序列表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        归并排序的实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stable-in-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stable &amp; In-place
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -960,6 +1071,117 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-shell-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 希尔排序 Shell Sort
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 希尔排序 Shell Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最坏情况分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        改进最坏情况
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-heap-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 堆排序 Heap Sort
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-merge-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 归并排序 Merge Sort
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 归并排序 Merge Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        合并两个有序列表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        归并排序的实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stable-in-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stable &amp; In-place
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1014,6 +1236,196 @@
 <blockquote>
 <p>更好的办法是，进行更大跨度的交换，每次消除多个逆序对。</p>
 </blockquote>
+<h2 id="3-shell-sort">3 希尔排序 Shell Sort<a class="headerlink" href="#3-shell-sort" title="Permanent link">&para;</a></h2>
+<p>根据以上讨论，希尔排序在插入排序的基础上，希望更高效地消除逆序对。基本思路是：</p>
+<ol>
+<li>
+<p>定义增量序列 <span class="arithmatex">\(h_1 &lt; h_2 &lt; \cdots &lt; h_t\)</span> ，并且 <span class="arithmatex">\(h_1 = 1\)</span> ；</p>
+</li>
+<li>
+<p>从序列最大的一端开始，每次进行以 <span class="arithmatex">\(h_k\)</span> 为间隔的排序，即 <span class="arithmatex">\(k = t, t-1, \cdots, 1\)</span> 。</p>
+</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">例子</p>
+<p><img alt="一个希尔排序的例子" src="../shellsort_exa.png" /></p>
+</div>
+<p>一个重要性质是，经过 <span class="arithmatex">\(h_k\)</span> 排序后，再继续排序，并不会影响 <span class="arithmatex">\(h_k\)</span> 阶的有序性。</p>
+<div class="admonition code">
+<p class="admonition-title">代码实现</p>
+<p>对于长度为 <span class="arithmatex">\(N\)</span> 的数组，一般取：</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(h_t = [N / 2], \quad h_k = [h_k / 2].\)</span>\)</span></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Shellsort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">      </span><span class="kt">int</span><span class="w">  </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">Increment</span><span class="p">;</span><span class="w"> </span>
+<span class="w">      </span><span class="n">ElementType</span><span class="w">  </span><span class="n">Tmp</span><span class="p">;</span><span class="w"> </span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Increment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">Increment</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">Increment</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w">  </span>
+<span class="w">            </span><span class="cm">/*h sequence */</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Increment</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* insertion sort */</span>
+<span class="w">                  </span><span class="n">Tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">];</span><span class="w"> </span>
+<span class="w">                  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">Increment</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Increment</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">                        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">Tmp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Increment</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">                              </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Increment</span><span class="w"> </span><span class="p">];</span><span class="w"> </span>
+<span class="w">                        </span><span class="k">else</span><span class="w"> </span>
+<span class="w">                              </span><span class="k">break</span><span class="p">;</span><span class="w"> </span>
+<span class="w">                  </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Tmp</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="cm">/* end for-I and for-Increment loops */</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<p>希尔排序非常适合处理中等规模的数据（几万条级别）。</p>
+<h3 id="_1">最坏情况分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>希尔排序最坏情况下的时间复杂度为 <span class="arithmatex">\(\Theta(N^2)\)</span> ，例如</p>
+<p><img alt="一个希尔排序的最坏情况" src="../shellsort_bad.png" /></p>
+<p>注意到，上面的情况增量序列为 8，4，2，1 其中 8、4、2 都有公约数 2 ，即增量之间不互质，这导致多个增量效果被削弱。</p>
+<h3 id="_2">改进最坏情况<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>对于增量序列需要更好的选择，我们引入 Hibbard's Increment Sequence ，它规定</p>
+<div class="arithmatex">\[h_k = 2^k - 1，\]</div>
+<p>确保相邻增量之间没有公因子。这是一个固定的增量序列，实际排序的时候，我们找到其中第一个小于待排序数组规模的值作为初始增量。</p>
+<p>Hibbard 增量序列能把希尔排序最坏情况的时间复杂度提升至 <span class="arithmatex">\(\Theta(N^{\frac{3}{2}})\)</span> 。</p>
+<p>另外，Sedgewick 提出了更复杂的增量序列 1，5，19，41，109 ··· ，能把最坏情况的时间复杂度提升至 <span class="arithmatex">\(O(N^{\frac{4}{3}})\)</span> 。</p>
+<h2 id="4-heap-sort">4 堆排序 Heap Sort<a class="headerlink" href="#4-heap-sort" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>堆排序可以看成选择排序的改进。</p>
+</blockquote>
+<p>最简单的堆排序就是把原数组变成最小堆，每次取出根节点的值放入新数组</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="n">BuildHeap</span><span class="p">(</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="p">);</span><span class="w">             </span><span class="cm">/* O( N ) */</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">TmpH</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DeleteMin</span><span class="p">(</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="p">);</span><span class="w">   </span><span class="cm">/* O( log N ) */</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">H</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TmpH</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">];</span><span class="w">     </span><span class="cm">/* O( 1 ) */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>时间复杂度 <span class="arithmatex">\(T(N) = O(N \log{N})\)</span> ，表现很好；因为取出的节点需要存储位置，空间需求翻倍了，不太好。</p>
+<p>考虑对上面这个算法进行空间优化：由于每次取出最小堆根节点的元素后，需要将堆中最后一个元素放到根节点处；这会空出一个位置，可以把取出的值放进去；最后得到的是一个降序序列。</p>
+<p>如果想要一个升序排序的序列，改成建立最大堆就可以。</p>
+<div class="admonition code">
+<p class="admonition-title">代码实现</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Heapsort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span>
+
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="cm">/* BuildHeap */</span>
+<span class="w">            </span><span class="n">PercDown</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* DeleteMax */</span>
+<span class="w">            </span><span class="n">PercDown</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<p>对于规模为 <span class="arithmatex">\(N\)</span> 的数组进行堆排序，平均时间复杂度为 <span class="arithmatex">\(\Theta(N \log{N})\)</span> ，但是实际应用中通常比使用 Sedgewick 增量序列的希尔排序慢一点。</p>
+<h2 id="5-merge-sort">5 归并排序 Merge Sort<a class="headerlink" href="#5-merge-sort" title="Permanent link">&para;</a></h2>
+<h3 id="_3">合并两个有序列表<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>先考虑一个问题：如何快速合并两个升序的列表？</p>
+<p><img alt="合并两个有序列表" src="../mergelists.png" /></p>
+<p>如上图，两个有序列表分别用指针 <code>Aptr</code> 和 <code>Bptr</code> 标记当前待合并元素，指针 <code>Cptr</code> 则标记新序列当前待填入位置。</p>
+<p>每次只要比较 <code>Aptr</code> 与 <code>Bptr</code> 指向元素的大小，把小的放入 <code>Cptr</code> 的位置，直到某个序列遍历完，有序放入另一个序列剩下的元素即可。</p>
+<p>这个方法，每个元素被操作一次，时间复杂度为 <span class="arithmatex">\(O(N)\)</span> ，其中 <span class="arithmatex">\(N\)</span> 是两个有序序列的总规模。</p>
+<h3 id="_4">归并排序的实现<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>参考以上合并两个有序列表的方法，我们对数组进行排列时，考虑将一个区间分为左右两半排序，然后合并。</p>
+<p>使用递归的方式，当序列只有一个元素时说明有序，整个思路表示为</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">MSort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span><span class="w">   </span><span class="kt">int</span><span class="w">  </span><span class="n">Center</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="cm">/* if there are elements to be sorted */</span>
+<span class="w">      </span><span class="n">Center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span>
+<span class="w">      </span><span class="n">MSort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">,</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">);</span><span class="w">   </span><span class="cm">/* T( N / 2 ) */</span>
+<span class="w">      </span><span class="n">MSort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">,</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">);</span><span class="w">  </span><span class="cm">/* T( N / 2 ) */</span>
+<span class="w">      </span><span class="n">Merge</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">,</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">);</span><span class="w">  </span><span class="cm">/* O( N ) */</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="p">}</span><span class="w"> </span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">Mergesort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span><span class="w">   </span><span class="n">ElementType</span><span class="w">  </span><span class="o">*</span><span class="n">TmpArray</span><span class="p">;</span><span class="w">  </span><span class="cm">/* need O(N) extra space */</span>
+<span class="w">    </span><span class="n">TmpArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">TmpArray</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">      </span><span class="n">MSort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<span class="w">      </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">TmpArray</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="w">    </span><span class="k">else</span><span class="w">  </span><span class="n">FatalError</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;No space for tmp array!!!&quot;</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+<details class="code">
+<summary>代码实现</summary>
+<div class="highlight"><pre><span></span><code><span class="cm">/* Lpos = start of left half, Rpos = start of right half */</span><span class="w"> </span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Merge</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span>
+<span class="w">             </span><span class="kt">int</span><span class="w"> </span><span class="n">Lpos</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Rpos</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span><span class="w">   </span><span class="kt">int</span><span class="w">  </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">LeftEnd</span><span class="p">,</span><span class="w"> </span><span class="n">NumElements</span><span class="p">,</span><span class="w"> </span><span class="n">TmpPos</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="n">LeftEnd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rpos</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="n">TmpPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lpos</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="n">NumElements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Lpos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">Lpos</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">LeftEnd</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">Rpos</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="cm">/* main loop */</span><span class="w"> </span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Lpos</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Rpos</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">            </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="n">TmpPos</span><span class="o">++</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Lpos</span><span class="o">++</span><span class="w"> </span><span class="p">];</span><span class="w"> </span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span>
+<span class="w">            </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="n">TmpPos</span><span class="o">++</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Rpos</span><span class="o">++</span><span class="w"> </span><span class="p">];</span><span class="w"> </span>
+
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">Lpos</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">LeftEnd</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="cm">/* Copy rest of first half */</span><span class="w"> </span>
+<span class="w">        </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="n">TmpPos</span><span class="o">++</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Lpos</span><span class="o">++</span><span class="w"> </span><span class="p">];</span><span class="w"> </span>
+
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">Rpos</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="cm">/* Copy rest of second half */</span><span class="w"> </span>
+<span class="w">        </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="n">TmpPos</span><span class="o">++</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Rpos</span><span class="o">++</span><span class="w"> </span><span class="p">];</span><span class="w"> </span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumElements</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">         </span><span class="cm">/* Copy TmpArray back */</span><span class="w"> </span>
+<span class="w">        </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="p">];</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<p>如果考虑非递归方式，则自底向上</p>
+<p><img alt="非递归归并排序" src="../mergesort_iter.png" /></p>
+<h3 id="_5">分析<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>推导归并排序的时间复杂度，我们知道</p>
+<div class="arithmatex">\[T(1) = 1\]</div>
+<div class="arithmatex">\[T(N) = 2 T(\frac{N}{2}) + O(N)，\]</div>
+<p>因此 <span class="arithmatex">\(T(N) = O(N + N \log{N})\)</span> 。</p>
+<p>归并排序需要线性的额外内存空间 <span class="arithmatex">\(O(N)\)</span> ，而且内存中复制数组较慢；因此，一般不用于内存排序，而是常用于外存排序。</p>
+<h2 id="stable-in-place">Stable &amp; In-place<a class="headerlink" href="#stable-in-place" title="Permanent link">&para;</a></h2>
+<p>为了帮助评价排序算法，我们提出两个概念：</p>
+<ul>
+<li>
+<p>Stable 如果有多个值相同的元素，在排序前后的相对位置不变，那么这个排序算法称为 stable ；</p>
+</li>
+<li>
+<p>In-place 如果这个排序算法不需要额外存储空间（仅需要几个临时变量或指针不算），那么称为 in-place 。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Stable</th>
+<th>In-place</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insert</td>
+<td>✔️</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>Shell</td>
+<td>❌</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>Heap</td>
+<td>❌</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>Merge</td>
+<td>✔️</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
 
 
 
