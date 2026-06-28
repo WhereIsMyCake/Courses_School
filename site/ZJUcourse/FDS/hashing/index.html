@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../fds_lecture3/">
+        <link rel="prev" href="../sorting/">
       
       
-        <link rel="next" href="../fds_lecture5/">
+        <link rel="next" href="../../StatisticalLearning/LinearAlgebra/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>堆 - Learning at School</title>
+        <title>哈希表 - Learning at School</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#priority-queues-heaps" class="md-skip">
+        <a href="#hashing" class="md-skip">
           跳转至
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              堆
+              哈希表
             
           </span>
         </div>
@@ -507,37 +507,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    堆
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../fds_lecture4/" class="md-nav__link">
         
   
   
@@ -553,126 +526,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-adt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1 ADT
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-binary-heap" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2 二叉堆 Binary Heap
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2 二叉堆 Binary Heap">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        结构特点
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        堆顺序的特点
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3 基本操作
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3 基本操作">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        插入
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        删除
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        建堆
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -794,10 +647,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../hashing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    哈希表
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -813,6 +693,165 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 基本想法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 基本想法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hash-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        哈希表 Hash Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-hash-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 哈希函数 Hash Function
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 哈希函数 Hash Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seperate-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seperate Chaining
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-addressing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Addressing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-open-addressing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Open Addressing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Open Addressing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-probing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Probing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-probing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quadratic Probing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double Hashing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robin-hood-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Robin Hood Hashing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rehashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Rehashing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1023,44 +1062,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-adt" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1 ADT
+        1 基本想法
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-binary-heap" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2 二叉堆 Binary Heap
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2 二叉堆 Binary Heap">
+    <nav class="md-nav" aria-label="1 基本想法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#hash-table" class="md-nav__link">
     <span class="md-ellipsis">
       
-        结构特点
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        堆顺序的特点
+        哈希表 Hash Table
       
     </span>
   </a>
@@ -1073,22 +1090,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#2-hash-function" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3 基本操作
+        2 哈希函数 Hash Function
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3 基本操作">
+    <nav class="md-nav" aria-label="2 哈希函数 Hash Function">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#seperate-chaining" class="md-nav__link">
     <span class="md-ellipsis">
       
-        插入
+        Seperate Chaining
       
     </span>
   </a>
@@ -1096,21 +1113,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#open-addressing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        删除
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        建堆
+        Open Addressing
       
     </span>
   </a>
@@ -1119,6 +1125,78 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-open-addressing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Open Addressing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Open Addressing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-probing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Probing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-probing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quadratic Probing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double Hashing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robin-hood-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Robin Hood Hashing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rehashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Rehashing
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1139,49 +1217,90 @@
 
 
 
-<h1 id="priority-queues-heaps">Priority Queues / Heaps<a class="headerlink" href="#priority-queues-heaps" title="Permanent link">&para;</a></h1>
-<h2 id="1-adt">1 ADT<a class="headerlink" href="#1-adt" title="Permanent link">&para;</a></h2>
-<p>对于一个基本的队列，规则是先进先出。但是现在，我们希望其中的元素有各自的处理优先级，每次移出的是当前队列中优先级最高（低）的元素。</p>
-<h2 id="2-binary-heap">2 二叉堆 Binary Heap<a class="headerlink" href="#2-binary-heap" title="Permanent link">&para;</a></h2>
-<h3 id="_1">结构特点<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>二叉堆是一颗完全二叉树，从根节点开始，从上往下、从左往右填充。</p>
-<p>如果一个二叉堆有 <span class="arithmatex">\(N\)</span> 个节点的话，那么它的高度是</p>
-<div class="arithmatex">\[
-h = [\log{N}].
-\]</div>
-<div class="admonition note">
-<p class="admonition-title">满二叉树的特点</p>
-<p>如果一颗满二叉树的节点按照填充顺序标注索引（从 1 开始），那么对于一个索引为 <span class="arithmatex">\(i\)</span> 的节点：</p>
+<h1 id="hashing">Hashing<a class="headerlink" href="#hashing" title="Permanent link">&para;</a></h1>
+<h2 id="1">1 基本想法<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>除了基于比较进行排序，然后查找之外，还能通过对应关系查找。我们提出一种简单表结构 symbol table ，类似字典，有唯一名称和对应的属性。比较重要的操作是查找属性、插入、删除。</p>
+<h3 id="hash-table">哈希表 Hash Table<a class="headerlink" href="#hash-table" title="Permanent link">&para;</a></h3>
+<p><img alt="哈希表示意图" src="../hashtable.png" /></p>
+<p>对于每一个标识符 identifier <span class="arithmatex">\(x\)</span> ，定义哈希函数 hash function 为 <span class="arithmatex">\(f(x)\)</span> ，输出 <span class="arithmatex">\(x\)</span> 在哈希表中的位置，即哪一个桶中。 </p>
+<p>为了评估哈希表的效果，我们记 <span class="arithmatex">\(T\)</span> 为标识符的总数，<span class="arithmatex">\(n\)</span> 为已放入哈希表中的标识符总数，给出两个指标：</p>
 <ul>
 <li>
-<p>根节点的索引为 <span class="arithmatex">\([\frac{i}{2}]\)</span> </p>
+<p>标识符密度 identifier density <span class="arithmatex">\(\frac{n}{T}\)</span> ；</p>
 </li>
 <li>
-<p>左孩子的索引为 <span class="arithmatex">\(2i\)</span></p>
-</li>
-<li>
-<p>右孩子的索引为 <span class="arithmatex">\(2i + 1\)</span></p>
+<p>加载密度 loading density <span class="arithmatex">\(\lambda = \frac{n}{s \codt b}\)</span> 。</p>
 </li>
 </ul>
+<p>在将标识符放入哈希表的过程中，会遇到两种特殊情况：</p>
+<ul>
+<li>
+<p>collision 当两个不同的标识符放入同一个桶中，即哈希函数输出相同；</p>
+</li>
+<li>
+<p>overflow 当一个标识符被放入已满的桶中。</p>
+</li>
+</ul>
+<p>不难发现，如果没有 overflow ，那么哈希表满足 <span class="arithmatex">\(T_{serch} = T_{insert} = T_{delete} = O(1)\)</span> 。</p>
+<h2 id="2-hash-function">2 哈希函数 Hash Function<a class="headerlink" href="#2-hash-function" title="Permanent link">&para;</a></h2>
+<p>我们希望好的 <span class="arithmatex">\(f(x)\)</span> 具有性质：</p>
+<ul>
+<li>
+<p>容易计算并且使得 collision 出现的情况尽量少；</p>
+</li>
+<li>
+<p>分布均匀，映射到每个桶的概率尽量相等，即 <span class="arithmatex">\(P(f(x)=i) = \frac{1}{b}\)</span> ；</p>
+<ul>
+<li>这种均匀的哈希函数一般称为 uniform hash function 。</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">如何取哈希函数</p>
+<p>例如，如果 <span class="arithmatex">\(f(x) = x \% \text{TableSize}\)</span> ，那么 TableSize 取质数最好。</p>
 </div>
-<h3 id="_2">堆顺序的特点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>一个 Max Heap 的父节点的值总是大于等于子节点；一个 Min Heap 的父节点的值总是小于等于子节点。</p>
-<h2 id="3">3 基本操作<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<h3 id="_3">插入<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>采用上滤的思路，将新元素放在二叉树的末尾，然后与父节点比较，如果它的优先级更高则交换，直到满足堆顺序。</p>
-<h3 id="_4">删除<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>采用下滤的思路，删除根节点后，将二叉树末尾的元素移到当前位置，然后与子节点中较大者比较，如果它的优先级较低则交换，直到满足堆顺序。</p>
-<h3 id="_5">建堆<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>一般采用线性建堆的方式，基本步骤是：</p>
+<h3 id="seperate-chaining">Seperate Chaining<a class="headerlink" href="#seperate-chaining" title="Permanent link">&para;</a></h3>
+<p>把哈希值（即位置）一样的标识符放入一个链表中。</p>
+<h3 id="open-addressing">Open Addressing<a class="headerlink" href="#open-addressing" title="Permanent link">&para;</a></h3>
+<p>遇到 collision 情况时，寻找下一个空位来放入标识符。通过冲突解决函数来探测空位。</p>
+<h2 id="3-open-addressing">3 Open Addressing<a class="headerlink" href="#3-open-addressing" title="Permanent link">&para;</a></h2>
+<p>注意，我们接下来讨论的情况都针对哈希表的每个位置只有一个空格，只能放一个标识符。</p>
+<h3 id="linear-probing">Linear Probing<a class="headerlink" href="#linear-probing" title="Permanent link">&para;</a></h3>
+<p>线性探测使用线性函数 <span class="arithmatex">\(f(i) = i\)</span> 。</p>
+<p>容易导致 primary clustering ，在哈希表中形成区块，使得分布不均匀。</p>
+<h3 id="quadratic-probing">Quadratic Probing<a class="headerlink" href="#quadratic-probing" title="Permanent link">&para;</a></h3>
+<p>二次探测使用二次函数 <span class="arithmatex">\(f(i) = i^2\)</span> 。</p>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+<p>使用二次探测时，如果 table size 是质数，并且哈希表至少有一半空位，那么一个新元素一定能放入。</p>
+</div>
+<p>如果有很多插入、删除操作，那么插入的效率会大大下降；另外虽然这解决了线性探测的区块问题，但是会导致 secondary clustering 。</p>
+<h3 id="double-hashing">Double Hashing<a class="headerlink" href="#double-hashing" title="Permanent link">&para;</a></h3>
+<p>使用第二个哈希函数来探测 <span class="arithmatex">\(f(i) = i \cdot \text{hash}_2(c)\)</span> ，其中 <span class="arithmatex">\(\text{hash}_2(x) \neq 0\)</span> ，并且要确保所有位置能被探测到。</p>
+<div class="admonition example">
+<p class="admonition-title">一个好的 <span class="arithmatex">\(\text{hash}_2(x)\)</span></p>
+<p><span class="arithmatex">\(\text{hash}_2(x) = R - x \% R\)</span> ，其中 <span class="arithmatex">\(R\)</span> 取一个比 table size 略小的质数。</p>
+</div>
+<h3 id="robin-hood-hashing">Robin Hood Hashing<a class="headerlink" href="#robin-hood-hashing" title="Permanent link">&para;</a></h3>
+<p>定义探测举例为当前位置 <span class="arithmatex">\(c(x)\)</span> 与原本哈希值 <span class="arithmatex">\(h(x)\)</span> 的间隔，即</p>
+<div class="arithmatex">\[
+d(x) = [c(x) - h(x) + \text{TableSize}] \% \text{TableSize}
+\]</div>
+<p>探测距离越小，那么这个标识符越富有。</p>
+<p>依次插入标识符时，如果新标识符的探测距离大于当前位置上标识符的探测距离，那么把新标识符放到这个位置，替换出来的原标识符继续向后探测。</p>
+<h2 id="4-rehashing">4 Rehashing<a class="headerlink" href="#4-rehashing" title="Permanent link">&para;</a></h2>
+<p>在二次探测中，当哈希表超过一半都有元素时，插入可能失败，这时可以进行 rehashing ，基本思路是：</p>
 <ol>
 <li>
-<p>按输入元素顺序填充一颗完全二叉树；</p>
+<p>建立新的哈希表，要求 table size 是一个质数，并且至少是原表两倍大；</p>
 </li>
 <li>
-<p>从第一个非叶子节点开始，比较它和两个孩子的值，如果它的优先级更低，那么和优先级更高的孩子交换，不断将它下沉直到顺序正确。</p>
+<p>扫描原来的哈希表，找出没有被删除的元素；</p>
+</li>
+<li>
+<p>设计新的哈希函数，把找出来的元素插入新的哈希表。</p>
 </li>
 </ol>
-<p>时间复杂度是 <span class="arithmatex">\(O(N)\)</span> 。</p>
 
 
 
@@ -1217,7 +1336,7 @@ h = [\log{N}].
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../fds_lecture3/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 树">
+          <a href="../sorting/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 排序">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1227,20 +1346,20 @@ h = [\log{N}].
                 上一页
               </span>
               <div class="md-ellipsis">
-                树
+                排序
               </div>
             </div>
           </a>
         
         
           
-          <a href="../fds_lecture5/" class="md-footer__link md-footer__link--next" aria-label="下一页: 并查集">
+          <a href="../../StatisticalLearning/LinearAlgebra/" class="md-footer__link md-footer__link--next" aria-label="下一页: 线性代数基础">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                并查集
+                线性代数基础
               </div>
             </div>
             <div class="md-footer__button md-icon">

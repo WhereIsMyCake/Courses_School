@@ -14,7 +14,7 @@
 
 - 标识符密度 identifier density $\frac{n}{T}$ ；
 
-- 加载密度 loading density $\lambda = \frac{n}{s \codt b}$ 。
+- 加载密度 loading density $\lambda = \frac{n}{s \cdot b}$ 。
 
 在将标识符放入哈希表的过程中，会遇到两种特殊情况：
 
