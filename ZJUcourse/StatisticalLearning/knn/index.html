@@ -275,26 +275,6 @@
   
 
       
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../MachineLearning/ConvexOptimization/" class="md-tabs__link">
-          
-  
-  
-  数据建模与分析
-
-        </a>
-      </li>
-    
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -658,6 +638,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/hashing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    哈希表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -899,121 +907,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    数据建模与分析
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    数据建模与分析
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../MachineLearning/ConvexOptimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    基于梯度的凸优化
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../MachineLearning/deeplearning/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    深度学习
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -1101,6 +994,9 @@ Y = f(X) + \epsilon ，
 \hat{y_0} = \frac{1}{k} \sum_{x_i \in N_k(x_0)} y_i ，
 \]</div>
 <p>其中 <span class="arithmatex">\(N_k(x_0)\)</span> 是离 <span class="arithmatex">\(x_0\)</span> 最近的 <span class="arithmatex">\(k\)</span> 个样本的集合。</p>
+<p>不难发现，随着 <span class="arithmatex">\(k\)</span> 变大，预测模型会变得平滑；但是 <span class="arithmatex">\(k\)</span> 过大时，预测模型会偏离真实模型。</p>
+<p><img alt="KNN 例子" src="../knn-1.png" />
+<img alt="KNN 例子" src="../knn-2.png" /></p>
 <div class="admonition hint">
 <p class="admonition-title">注意</p>
 <p>kNN 中的“最近”，可能是欧式距离最近，也可能是其他情况。</p>
