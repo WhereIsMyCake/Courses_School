@@ -989,6 +989,73 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#9-bucket-sort-radix-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 桶排序 Bucket Sort 与基数排序 Radix Sort
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 桶排序 Bucket Sort 与基数排序 Radix Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        桶排序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基数排序
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基数排序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSD 策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lexically-sorted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        字典序 Lexically Sorted
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1605,6 +1672,73 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#9-bucket-sort-radix-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 桶排序 Bucket Sort 与基数排序 Radix Sort
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 桶排序 Bucket Sort 与基数排序 Radix Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        桶排序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基数排序
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基数排序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSD 策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lexically-sorted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        字典序 Lexically Sorted
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2030,6 +2164,55 @@ T(N) = [\frac{2}{N} \sum_{j=0}^{N-1} T(j)] + cN = O(N \log{N}) .
 <p>解决办法是增加一个指针字段指向结构体，交换时只交换指针而不动结构体本身（indirect sorting）。最后如果需要，再按照指针拍好的序调整结构体顺序。</p>
 <h2 id="8">8 排序算法的一般下界<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <p>任何只基于元素比较的排序算法，最坏情况下的计算时间复杂度下界必然是 <span class="arithmatex">\(\Omega(N \log{N})\)</span> 。</p>
+<h2 id="9-bucket-sort-radix-sort">9 桶排序 Bucket Sort 与基数排序 Radix Sort<a class="headerlink" href="#9-bucket-sort-radix-sort" title="Permanent link">&para;</a></h2>
+<h3 id="_13">桶排序<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p><strong>问题</strong>：假设我们有 <span class="arithmatex">\(N\)</span> 个学生，每个学生都有一个范围在 0 到 100 之间的分数（共有 <span class="arithmatex">\(M = 101\)</span> 种不同可能的分数），如何在线性时间内根据他们的成绩进行排序？</p>
+<p>桶排序的解决办法：
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">      </span><span class="n">initialize</span><span class="w"> </span><span class="n">count</span><span class="p">[</span><span class="w"> </span><span class="p">];</span><span class="w"> </span>
+<span class="w">      </span><span class="c1">// 初始化一个名为 count 的数组（也就是一排空桶）</span>
+
+<span class="w">      </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">read</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="n">record</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="n">insert</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="n">count</span><span class="p">[</span><span class="n">stdnt</span><span class="p">.</span><span class="n">grade</span><span class="p">];</span>
+<span class="w">      </span><span class="c1">// 当读入一个学生的数据时，直接把这个学生塞进下标为 stdnt.grade（学生成绩）的那个桶里</span>
+
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">M</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="w">                  </span><span class="n">output</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// 从第 0 个桶一路扫描到第 M-1 个桶，如果桶里有学生，就把桶里的学生挨个输出出来</span>
+<span class="p">}</span>
+</code></pre></div>
+这样时间复杂度为 <span class="arithmatex">\(T(N, M) = O(M + N)\)</span> 。</p>
+<div class="admonition warning">
+<p class="admonition-title">桶排序的问题</p>
+<p>如果 <span class="arithmatex">\(M &gt;&gt; N\)</span> ，即桶的数量远大于待排序元素的数量，那么在空间上非常浪费。</p>
+</div>
+<h3 id="_14">基数排序<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>弥补桶排序的问题。</p>
+</blockquote>
+<p><strong>问题</strong>：给定 <span class="arithmatex">\(N = 10\)</span> 个范围在 0 到 999 之间的整数（即 <span class="arithmatex">\(M = 1000\)</span>），能否在线性时间内对它们进行排序？</p>
+<h4 id="lsd">LSD 策略<a class="headerlink" href="#lsd" title="Permanent link">&para;</a></h4>
+<p>从最低有效位开始排序 Least Significant Digit first ，记 <span class="arithmatex">\(B\)</span> 为桶的数量，<span class="arithmatex">\(P\)</span> 为分配的轮数，每一轮只按一个位数放到对应桶中。</p>
+<div class="admonition example">
+<p class="admonition-title">例子</p>
+<p>对输入 <code>64, 8, 216, 512, 27, 729, 0, 1, 343, 125</code> 进行排序。</p>
+<p>由于位数最多的数字有三位，因此这里取 <span class="arithmatex">\(P = 3\)</span> ；又因为是十进制数，取 <span class="arithmatex">\(B = 10\)</span> ，从个位开始分配：
+  <img alt="LSD 的一个例子" src="../LSD.png" /></p>
+</div>
+<p>这样，时间复杂度为 <span class="arithmatex">\(T = O(P(N + B))\)</span> 。</p>
+<h4 id="lexically-sorted">字典序 Lexically Sorted<a class="headerlink" href="#lexically-sorted" title="Permanent link">&para;</a></h4>
+<p>基数排序不仅可以应用到纯数字上，也可以拓展到多键值排序上，意思是只要一个键值有明确优先级，就可以排序。</p>
+<p>假设每个数据 <span class="arithmatex">\(R_i\)</span> 有 <span class="arithmatex">\(r\)</span> 个不同的键值，记 <span class="arithmatex">\(K_i^j\)</span> 为第 <span class="arithmatex">\(i\)</span> 个数据的第 <span class="arithmatex">\(j\)</span> 个键值（<span class="arithmatex">\(j = 0\)</span> 时优先级最高）。 </p>
+<ul>
+<li>
+<p>Most Significant Digit Sort 从 <span class="arithmatex">\(K^0\)</span> 开始分配；</p>
+</li>
+<li>
+<p>Least Significant Digit Sort 从 <span class="arithmatex">\(K^{r-1}\)</span> 开始分配。 </p>
+</li>
+</ul>
 
 
 
