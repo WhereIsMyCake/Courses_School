@@ -12,12 +12,15 @@
     const cover = document.querySelector(".hero-content");
     if (!cover) return;
 
+    // An old/missing stylesheet must leave the original text visible only once.
+    const canAnimate = !reducedMotion.matches
+      && getComputedStyle(cover).getPropertyValue("--cover-typewriter-ready").trim() === "1";
     const lines = Array.from(cover.querySelectorAll("[data-typewriter]"));
     const characters = lines.map((line) => {
       if (!originalTexts.has(line)) originalTexts.set(line, line.textContent);
       const text = originalTexts.get(line);
       line.textContent = text;
-      if (reducedMotion.matches) return [];
+      if (!canAnimate) return [];
 
       // Keep a complete accessible sentence, rather than announcing each letter.
       const accessible = document.createElement("span");
@@ -39,7 +42,7 @@
       line.replaceChildren(accessible, visual);
       return glyphs;
     });
-    if (reducedMotion.matches) return;
+    if (!canAnimate) return;
 
     if (document.fonts) await document.fonts.ready;
     await pause(550);
