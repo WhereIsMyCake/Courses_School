@@ -31,13 +31,15 @@
     - infix 中缀（英语很少出现）
 
     e.g.
+
     - happy -> unhappy
     - happy -> happiness
 
 
-2. *Zero derivation 零派生
+2. **Zero derivation** 零派生
 
     e.g.
+
     - google -> to google
     - record -> record
 
@@ -155,6 +157,7 @@ e.g.
 用相关联的事物指代另一个事物
 
 e.g. 
+
 - Let me give you a hand.
 - The oval office is busy at work.
 - The pen is mightier than the sword.
@@ -163,6 +166,7 @@ e.g.
 用某个事物的部分指代整体，或者用某个事物的整体指代部分
 
 e.g.
+
 - Many hands make light work.
 - Here come two black suits.
 - England beats Sweden in the last football match.
@@ -172,6 +176,7 @@ e.g.
 Overstatement and exaggeration
 
 e.g.
+
 - This bag weighs a ton.
 - I am dying of thirst.
 
@@ -179,6 +184,7 @@ e.g.
 委婉的说法，一般是双重否定表肯定
 
 e.g.
+
 - Your proposal is not unreasonable.
 - It was no small challenge.
 - Mmm, not exactly delicious.
@@ -192,6 +198,7 @@ e.g. Wilson was a Yorkshireman by birth, a salesman by trade, and insane by the 
 具有意义和结构上的对仗
 
 e.g.
+
 - Man proposes, God disposes.
 - > That's one small step for a man -- one giant leap for mankind.
 
@@ -201,6 +208,7 @@ e.g.
 e.g. cruel kindnss, a victorious defeat
 
 ??? note "Exercise"
+
     - We have 20,000 hungry mouths to feed.   -> synecdoche
     - The case was defended by eloquent lips.   -> metonymy
     - They came to live under the same roof.    -> synecdoche or metonymy
@@ -348,18 +356,22 @@ It is a sequence of the recurring foot in a line.
 8. ...
 
 e.g.
+
 - Iambic pentameter 
-> To strive, to seek, to find and not to yield.
+
+    > To strive, to seek, to find and not to yield.
+
 - Anapestic tetrameter
-> And the sheen of their spear was like stars on the sea.
+
+    > And the sheen of their spear was like stars on the sea.
 
 ### 常见形式
 #### Heroic Couplet 英雄双行体
 A pair of rhyming lines, each in iambic pentameter.
 
 e.g.
-> So long as man can breathe and eyes can see, 
-So long lives this, and this gives life to thee.
+> So long as man can breathe and eyes can see,  
+> So long lives this, and this gives life to thee.
 
 #### Blank Verse 素体诗
 Unrhymed lines in iambic pentameter.
@@ -396,6 +408,7 @@ Unrhymed lines in iambic pentameter.
 #### By length
 
 效果：
+
 | Short sentences | Long sentences |
 |----|----|
 | direct, concise, terse, clear | solemn, formal, detailed |
@@ -411,12 +424,18 @@ Unrhymed lines in iambic pentameter.
 #### Loose Sentences vs. Periodic Sentences/Nesting
 
 Sentence Branching:
+
 - Left branching
-> Having witnessed his children treated disrespectfully, his wife ridiculed for her weight, and his ancient philosophy derided and ignored, the elephant threw an umbrella into the crowd.
+
+    > Having witnessed his children treated disrespectfully, his wife ridiculed for her weight, and his ancient philosophy derided and ignored, the elephant threw an umbrella into the crowd.
+
 - Right branching
-> The elephant threw an umbrella into the crowd, sending them into a panic, a panic that grew until the crowd became a roiling, violent mob bent on destruction.
+
+    > The elephant threw an umbrella into the crowd, sending them into a panic, a panic that grew until the crowd became a roiling, violent mob bent on destruction.
+
 - Middle-branching
-> Love, as everyone knows except those who happened to have been afflicted with it, is blind.
+
+    > Love, as everyone knows except those who happened to have been afflicted with it, is blind.
 
 1. **Loose Structure**
     right-branching

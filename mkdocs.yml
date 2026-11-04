@@ -1,10 +1,12 @@
 site_name: Learning at School
+site_url: https://whereismycake.github.io/Courses_School/
 site_description:  学校的课程笔记和学习资料maybe
 site_author: MJ
 
 theme:
   name: material
   language: zh
+  font: false
   features:
     - navigation.tabs
     - navigation.top
@@ -27,8 +29,9 @@ markdown_extensions:
       permalink: true
 
 extra_javascript:
+  - javascripts/cover-typewriter.js
   - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - assets/vendor/mathjax/3.2.2/tex-mml-chtml.js
 
 extra_css:
   - stylesheets/extra.css
@@ -36,6 +39,12 @@ extra_css:
 nav:
   - 首页: index.md
   - 英语文体学: ZJUcourse/stylistics.md
+  - 地图学:
+    - 总复习: ZJUcourse/Cartograhpy/note.md
+    - 历年卷: ZJUcourse/Cartograhpy/exams.md
+  - 现代气候学:
+    - 复习: ZJUcourse/Climatology/review.md
+    - 历年题: ZJUcourse/Climatology/test.md
   - 数据结构基础: 
     - 算法分析: ZJUcourse/FDS/fds_lecture1.md
     - 列表、栈、队列: ZJUcourse/FDS/fds_lecture2.md 
@@ -47,12 +56,29 @@ nav:
     - 排序: ZJUcourse/FDS/sorting.md
     - 哈希表: ZJUcourse/FDS/hashing.md
   - 统计学习:
-    - 线性代数基础: ZJUcourse/StatisticalLearning/LinearAlgebra.md
     - KNN 与偏差-方差权衡: ZJUcourse/StatisticalLearning/knn.md
     - 线性回归模型: ZJUcourse/StatisticalLearning/linearreg.md
     - 因果推断: ZJUcourse/StatisticalLearning/causal_intro.md
   - 机器学习:
     - 复习: ZJUcourse/MachineLearning/review.md
+  - Python程序设计: 
+    - 理论部分复习: ZJUcourse/Python/python.md
+  - 遥感概论:
+    - 绪论: ZJUcourse/RS/chapter1.md
+    - 遥感物理基础A: ZJUcourse/RS/chapter2.md
+    - 遥感物理基础B: ZJUcourse/RS/chapter3.md
+    - 遥感物理基础C: ZJUcourse/RS/chapter4.md
+    - 遥感物理基础D: ZJUcourse/RS/chapter5.md
+    - 遥感成像系统A: ZJUcourse/RS/chapter6.md
+    - 遥感成像系统B: ZJUcourse/RS/chapter7.md
+    - 遥感图像处理A: ZJUcourse/RS/chapter8.md
+    - 遥感图像处理B: ZJUcourse/RS/chapter9.md
+    - 遥感影像目视解译与制图: ZJUcourse/RS/chapter10.md
+    - 遥感影像计算机解译: ZJUcourse/RS/chapter11.md
+    - 历年卷: ZJUcourse/RS/exam.md
+  - GIS应用开发:
+    - 理论部分复习: ZJUcourse/WebGIS/review.md
+    - 前端代码复习: ZJUcourse/WebGIS/front_code.md
   - 地理空间数据库:
     - 概论: ZJUcourse/SDBMS/lecture1.md
     - 关系模型与关系代数: ZJUcourse/SDBMS/lecture2.md

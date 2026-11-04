@@ -36,8 +36,10 @@ $$
 等价的表达式为
 
 $$
+\begin{gathered}
 \min_{\beta}{\sum_{i=1}^n (y_i - \sum_{j=1}^p \beta_j x_{ij})^2} \\
 s.t. \quad \sum_{j=1}^p \beta_j^2 \le s
+\end{gathered}
 $$
 
 这里的参数 $s$ 和之前的参数 $\lambda$ 有一一对应的关系。
@@ -91,8 +93,10 @@ $$
 等价的表达式为
 
 $$
+\begin{gathered}
 \min_{\beta}{\sum_{i=1}^n (y_i - \sum_{j=1}^p \beta_j x_{ij})^2} \\
 s.t. \quad \sum_{j=1}^p |\beta_j| \le s
+\end{gathered}
 $$
 
 其中 $s$ 和 $\lambda$ 具有一一对应关系。
@@ -120,8 +124,10 @@ $$
 目标函数变成
 
 $$
+\begin{gathered}
 \min_{d}{\frac{1}{2n} ||y - \sum_{j=1}^p d_j \hat{\beta}_j^{OLS} x_j||^2 + \lambda \sum_{j=1}^p d_j} \\
 s.t. \quad d_j \ge 0 .
+\end{gathered}
 $$
 
 求解之后，如果原本系数很小的话，那么缩减因子会把它缩减到接近 0 ，而如果原本系数很大，那么缩减因子几乎不会缩减它。

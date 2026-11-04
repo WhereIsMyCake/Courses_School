@@ -33,38 +33,41 @@ CREATE TABLE 表名 (列名 数据类型 [列级完整性约束条件] [, 表级
 ```
 
 其中：
+
  - 一列就是一个属性
  - 列级完整性约束条件涉及相应属性列的完整性约束条件
  - 表级完整性约束条件涉及一个或多个属性列的完整性约束条件
 
 >⚠️中括号中的内容可以没有，并且一个表可以有一列或多列
 
->🌰创建 students 和 enrolled 关系
->```sql
->CREATE TABLE students(
->   sid CHAR(10) PRIMARY KEY, 
->   name VARCHAR(20) NOT NULL, 
->   age INT CHECK(age > 10)
->);
->
->CREATE TABLE enrolled(
->   sid CHAR(10) REFERENCES students(sid), 
->   cid CHAR(20), 
->   grade INT, 
->   PRIMARY KEY(sid, cid)
->);
->```
->
->定义上面的基本关系 enrolled 也可以把主码和外码的声明放到最后，写成
->```sql
->CREATE TABLE enrolled(
->   sid CHAR(10), 
->   cid CHAR(20), 
->   grade INT, 
->   CONSTRAINT pk_en PRIMARY KEY(sid, cid), 
->   CONSTRAINT fk_en FOREIGN KEY students(sid)
->);
->```
+!!! example "创建 students 和 enrolled 关系"
+
+    ```sql
+    CREATE TABLE students(
+       sid CHAR(10) PRIMARY KEY, 
+       name VARCHAR(20) NOT NULL, 
+       age INT CHECK(age > 10)
+    );
+    
+    CREATE TABLE enrolled(
+       sid CHAR(10) REFERENCES students(sid), 
+       cid CHAR(20), 
+       grade INT, 
+       PRIMARY KEY(sid, cid)
+    );
+    ```
+    
+    定义上面的基本关系 enrolled 也可以把主码和外码的声明放到最后，写成
+
+    ```sql
+    CREATE TABLE enrolled(
+       sid CHAR(10), 
+       cid CHAR(20), 
+       grade INT, 
+       CONSTRAINT pk_en PRIMARY KEY(sid, cid), 
+       CONSTRAINT fk_en FOREIGN KEY students(sid)
+    );
+    ```
 
 
 #### 数据类型
@@ -72,6 +75,7 @@ CREATE TABLE 表名 (列名 数据类型 [列级完整性约束条件] [, 表级
 定义表的属性时，需要指明该属性的域，在 SQL 中就用数据类型来实现。
 
 常见数据类型有：
+
  - `char(20)`
  - `varchar(50)`
  - `text`
@@ -96,18 +100,20 @@ CREATE TABLE 表名 (列名 数据类型 [列级完整性约束条件] [, 表级
 - 实体完整性 PRIMARY KEY
 
 - 参照完整性 FOREIGN KEY
+
     >⚠️基本关系中的外码取值只能是被参照关系中的主码值、唯一值或空值（`NULL`）
 
 - 用户定义完整性
 
->🌰用 `CHECK` 实现 `NOT NULL`
->```sql
->CREATE TABLE students(
->   id INT PRIMARY KEY, 
->   name TEXT, 
->   gpa REAL CHECK(gpa IS NOT NULL)
->);
->```
+!!! example "用 `CHECK` 实现 `NOT NULL`"
+
+    ```sql
+    CREATE TABLE students(
+       id INT PRIMARY KEY, 
+       name TEXT, 
+       gpa REAL CHECK(gpa IS NOT NULL)
+    );
+    ```
 
 ### 修改表
 
@@ -119,10 +125,11 @@ ALTER TABLE 表名
     [MODIFY 列名 数据类型];
 ```
 
->🌰更改表的约束条件（接创建表的例子）
->```sql
->ALTER TABLE enrolled ADD CONSTRAINT grade_check CHECK(grade BETWEEN 0 AND 100);
->```
+!!! example "更改表的约束条件（接创建表的例子）"
+
+    ```sql
+    ALTER TABLE enrolled ADD CONSTRAINT grade_check CHECK(grade BETWEEN 0 AND 100);
+    ```
 
 
 ### 删除表
@@ -143,14 +150,15 @@ INSERT
 
 其中可以插入多个值到多个属性，如果没有给出属性那么默认插入一行数据，但是都要注意值与属性位置对应。
 
->🌰插入数据（接创建表的例子）
->```sql
->INSERT INTO students VALUES ('111', 'Zhang', 19);
->
->INSERT INTO students(sid, age, name) VALUES ('112', 20, 'Wang'); 
->
->INSERT INTO students(sid, name) VALUES ('113', 'Xu');
->```
+!!! example "插入数据（接创建表的例子）"
+
+    ```sql
+    INSERT INTO students VALUES ('111', 'Zhang', 19);
+    
+    INSERT INTO students(sid, age, name) VALUES ('112', 20, 'Wang'); 
+    
+    INSERT INTO students(sid, name) VALUES ('113', 'Xu');
+    ```
 
 ### 修改数据
 
@@ -161,12 +169,13 @@ UPDATE 表名
 ```
 其中也可以有多个列名及对应表达式，之间以逗号分隔。
 
->🌰修改数据（接创建表的例子）
->```sql
->UPDATE students SET age = age + 1;
->
->UPDATE students SET age = 22 WHERE sid = '113'; 
->```
+!!! example "修改数据（接创建表的例子）"
+
+    ```sql
+    UPDATE students SET age = age + 1;
+    
+    UPDATE students SET age = 22 WHERE sid = '113'; 
+    ```
 
 ### 删除数据
 
@@ -194,27 +203,31 @@ SELECT 属性1, 属性2, 属性3...
 如果不写具体属性，而是写 `SELECT *` 那就选中全部属性。
 如果在属性名前面加上 `DISTINCT` 那返回会去除重复行。
 
-⚠️注意，用 `SELECT` 查询时，如果涉及多张表且没有给出连接条件的情况，先把 `FROM` 指明的表做笛卡尔积，然后在新的集合中选择符合条件的记录。所以如果有一张表为空，那返回也是空！
+!!! warning "注意"
+
+    用 `SELECT` 查询时，如果涉及多张表且没有给出连接条件的情况，先把 `FROM` 指明的表做笛卡尔积，然后在新的集合中选择符合条件的记录。所以如果有一张表为空，那返回也是空！
 
 ### 表变量和属性变量
 
 查询涉及多张表而不同表有同名属性时，或一张表要使用多次时，可以：
+
  - 查询语句给属性加上表名限定，写成 `表名.属性名`
  - 也可以用 `AS` 给查询返回的列重命名，或给表重命名（注意 `AS` 可以省略）
 
->🌰给出表 employee ，查询每位员工姓名及其领导姓名
->| id | name | manager_id |
->|---|---|---|
->| 1 | 张三	| NULL |
->| 2 | 李四	| 1 |
->| 3 | 王五 | 1 |
->| 4 | 赵六	| 2 |
->
->```sql
->SELECT e1.name AS employee, e2.name AS manager
->   FROM employ AS e1, employ AS e2
->   WHERE e1.manager_id = e2.id;
->```
+!!! example "给出表 employee ，查询每位员工姓名及其领导姓名"
+
+    | id | name | manager_id |
+    |---|---|---|
+    | 1 | 张三	| NULL |
+    | 2 | 李四	| 1 |
+    | 3 | 王五 | 1 |
+    | 4 | 赵六	| 2 |
+    
+    ```sql
+    SELECT e1.name AS employee, e2.name AS manager
+       FROM employ AS e1, employ AS e2
+       WHERE e1.manager_id = e2.id;
+    ```
 
 ### 集合运算
 
@@ -222,15 +235,16 @@ SELECT 属性1, 属性2, 属性3...
 | --- | --- | --- |
 | 并集 | 交集 | 差集 |
 
->🌰给出表 apply ，查询申请了 CS 但没申请 EE 的学生
->| sid| cname| major| decision |
->|---| --- | --- | --- |
->
->```sql
->SELECT sid FROM apply WHERE major='CS'
->EXCEPT
->SELECT sid FROM apply WHERE major='EE';
->```
+!!! example "给出表 apply ，查询申请了 CS 但没申请 EE 的学生"
+
+    | sid| cname| major| decision |
+    |---| --- | --- | --- |
+
+    ```sql
+    SELECT sid FROM apply WHERE major='CS'
+    EXCEPT
+    SELECT sid FROM apply WHERE major='EE';
+    ```
 
 ### 子查询
 
@@ -248,19 +262,21 @@ SELECT 属性1, 属性2, 属性3...
 
 注意这四个运算符前都可以加上 `NOT` 取否定。
 
->🌰接上一个查询申请的例子，可以写成
->```sql
->SELECT sid FROM apply 
->   WHERE sid IN (SELECT sid FROM apply WHERE major='CS') 
->   AND sid NOT IN (SELECT sid FROM apply WHERE major='EE');
->```
->
->或者是
->```sql
->SELECT DISTINCT sid FROM apply a1 
->   WHERE major='CS' AND
->   NOT EXISTS (SELECT * FROM apply a2 WHERE a1.sid=a2.sid AND major='EE');
->```
+!!! example "接上一个查询申请的例子，可以写成"
+
+    ```sql
+    SELECT sid FROM apply 
+       WHERE sid IN (SELECT sid FROM apply WHERE major='CS') 
+       AND sid NOT IN (SELECT sid FROM apply WHERE major='EE');
+    ```
+    
+    或者是
+
+    ```sql
+    SELECT DISTINCT sid FROM apply a1 
+       WHERE major='CS' AND
+       NOT EXISTS (SELECT * FROM apply a2 WHERE a1.sid=a2.sid AND major='EE');
+    ```
 
 #### 实现交集和差集
 
@@ -310,7 +326,10 @@ SELECT DISTINCT R.A, R.B FROM R
 
     >⚠️ `COUNT(*)` 会计算 `NULL` ，但是 `COUNT(attribute)` 不会计算 `NULL` ！
 
->⚠️如果所有数据行都含 `NULL` ，那么 `COUNT` 返回 `0` ，其他函数返回 `NULL` ！
+    
+!!! warning "注意"
+
+    如果所有数据行都含 `NULL` ，那么 `COUNT` 返回 `0` ，其他函数返回 `NULL` ！
 
 要注意 SQL 操作时聚合函数计算的顺序，一般是在同级 `WHERE` 检查条件后。
 

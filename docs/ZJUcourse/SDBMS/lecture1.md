@@ -16,25 +16,29 @@
 
 - 物理数据模型：侧重实际存储结构，描述数据在磁盘或磁带上的存储、读取方法
 
-⚠️**如何描述一个数据模型**：
- - 数据结构：行列、键值对、指针等等
- - 数据操作
- - 完整性约束：各种条件约束
+!!! tip "如何描述一个数据模型"
+
+    - 数据结构：行列、键值对、指针等等
+    - 数据操作
+    - 完整性约束：各种条件约束
 
 
 ### 三级模式
 
 模式定义或描述一个数据集合，是相对稳定的。
 
->模式vs数据 类比 变量类型vs变量本身
+!!! tip icon-only
+
+    模式vs数据 类比 变量类型vs变量本身
 
 ![三级模式示意](./lecture1-schema.png)
 
 一个数据库只有一个模式，包含：
+
  - 模式，一般指概念模式
  - 多个外模式，每个外模式对应一个外模式/模式映象
  - 一个内模式（一般是存储模式或者说物理模式），及模式/内模式映象   
- ❓️外模式和内模式是解耦的吗？？？？
+
 
 ## 空间数据库基本概念
 
@@ -67,6 +71,7 @@
 ### 空间数据库管理系统 SDBMS
 
 主要功能：
+
  - 空间数据的定义与操作
  - 空间数据的组织、存储、管理
  - 后台的事务管理和运行管理
@@ -84,15 +89,16 @@
 
 ---
 
-注意：
 
- - 空间计算思想
+!!! warning "注意"
+
+    - 空间计算思想
 
 
- - 名词缩写
-    - DBMS Database Management System
-    - DDL Data Definition Language
-    - DML Data Manipulation Language
-    - DBA Database Administrators
-    - SDBMS Spatial Database Management System
-    - SDS Spatial Database System
+    - 名词缩写
+        - DBMS Database Management System
+        - DDL Data Definition Language
+        - DML Data Manipulation Language
+        - DBA Database Administrators
+        - SDBMS Spatial Database Management System
+        - SDS Spatial Database System

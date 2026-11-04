@@ -58,7 +58,9 @@ void InsertionSort ( ElementType A[ ], int N )
 
       对于长度为 $N$ 的数组，一般取：
 
-      $$h_t = [N / 2], \quad h_k = [h_k / 2].$$
+    $$
+    h_t = [N / 2], \quad h_k = [h_k / 2].
+    $$
 
       ```c
       void Shellsort( ElementType A[ ], int N ) 
@@ -494,6 +496,7 @@ $$
       对输入 `64, 8, 216, 512, 27, 729, 0, 1, 343, 125` 进行排序。
 
       由于位数最多的数字有三位，因此这里取 $P = 3$ ；又因为是十进制数，取 $B = 10$ ，从个位开始分配：
+
       ![LSD 的一个例子](LSD.png)
 
 这样，时间复杂度为 $T = O(P(N + B))$ 。

@@ -1,0 +1,9 @@
+# Local Python environment and bytecode
+/.venv/
+__pycache__/
+*.py[cod]
+
+# Rebuildable site output and local verification results
+/site/
+/.tmp/
+/artifacts/
