@@ -51,6 +51,14 @@ nav:
     - KNN 与偏差-方差权衡: ZJUcourse/StatisticalLearning/knn.md
     - 线性回归模型: ZJUcourse/StatisticalLearning/linearreg.md
     - 因果推断: ZJUcourse/StatisticalLearning/causal_intro.md
+  - 机器学习:
+    - 复习: ZJUcourse/MachineLearning/review.md
+  - 地理空间数据库:
+    - 概论: ZJUcourse/SDBMS/lecture1.md
+    - 关系模型与关系代数: ZJUcourse/SDBMS/lecture2.md
+    - 关系数据库标准语言: ZJUcourse/SDBMS/lecture3.md
+    - 几何对象模型与查询: ZJUcourse/SDBMS/lecture4.md
+    - 空间扩展 E/R 图: ZJUcourse/SDBMS/lecture5.md
 
     
 
