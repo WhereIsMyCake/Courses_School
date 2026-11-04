@@ -21,6 +21,7 @@ docs/
     cover-typewriter.js    首页逐字打印动画
   assets/vendor/           随站点发布的 MathJax 和字体
 scripts/
+  asset_versions.py        构建时为自定义 CSS / JS 自动添加内容版本号
   check_rendering.py       源文件、生成 HTML、目录检查
   check_rendering_browser.cjs
                            可选的逐页浏览器检查
@@ -117,6 +118,14 @@ $$
 首页内容在 `docs/index.md`；打印动画由 `cover-typewriter.js` 控制，先标题后副标题，刷新或返回首页会重播。脚本中的 85 / 45 毫秒控制两行的打印间隔。用户选择减少动画时直接显示完整文字，禁用 JavaScript 时也保留文字。
 
 `extra.css` 还控制右侧目录悬停显示、窄屏公式滚动，以及页脚“上一页／下一页”文字隐藏；页面名称、箭头和翻页链接保留。
+
+## 线上与本地样式不一致时
+
+GitHub Pages 的静态文件有浏览器缓存。新的 HTML / JavaScript 如果配上旧的 `extra.css`，可能出现封面文字重复、打印动画不显示、页脚方向文字仍在、`icon-only` 显示 `Abstract` / `Tip` 等现象。
+
+`mkdocs.yml` 已注册 `scripts/asset_versions.py` 构建钩子，为自定义样式及脚本生成类似 `extra.css?v=内容哈希` 的加载地址。文件内容变化时，地址自动变化；普通构建和 `gh-deploy` 都会生效，无需手动改版本号，也不改变发布方式。已固定版本目录的字体和 MathJax 不受影响。
+
+封面脚本还会确认配套样式已加载；缺少新样式时直接显示一份完整文字，避免生成重复文字。首次发布这项改动后，可以按 `Ctrl+F5` 强制刷新一次，确保浏览器连 HTML 也重新获取。
 
 ## 推送源码与发布网站
 

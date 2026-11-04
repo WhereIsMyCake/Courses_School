@@ -3,6 +3,9 @@ site_url: https://whereismycake.github.io/Courses_School/
 site_description:  学校的课程笔记和学习资料maybe
 site_author: MJ
 
+hooks:
+  - scripts/asset_versions.py
+
 theme:
   name: material
   language: zh

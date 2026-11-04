@@ -172,6 +172,7 @@ body[data-md-page="index"] .md-footer {
 
 /* 3. 中间透明毛玻璃卡片 */
 .hero-content {
+  --cover-typewriter-ready: 1;
   text-align: center;
   /* 关键：毛玻璃效果 */
   background: rgba(255, 255, 255, 0.15); 
