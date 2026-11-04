@@ -1,0 +1,3707 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="学校的课程笔记和学习资料maybe">
+      
+      
+        <meta name="author" content="MJ">
+      
+      
+        <link rel="canonical" href="https://whereismycake.github.io/Courses_School/ZJUcourse/SDBMS/lecture4/">
+      
+      
+        <link rel="prev" href="../lecture3/">
+      
+      
+        <link rel="next" href="../lecture5/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>几何对象模型与查询 - Learning at School</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Learning at School" class="md-header__button md-logo" aria-label="Learning at School" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning at School
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              几何对象模型与查询
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../stylistics/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  英语文体学
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cartograhpy/note/" class="md-tabs__link">
+          
+  
+  
+  地图学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Climatology/review/" class="md-tabs__link">
+          
+  
+  
+  现代气候学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../FDS/fds_lecture1/" class="md-tabs__link">
+          
+  
+  
+  数据结构基础
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../StatisticalLearning/knn/" class="md-tabs__link">
+          
+  
+  
+  统计学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MachineLearning/review/" class="md-tabs__link">
+          
+  
+  
+  机器学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Python/python/" class="md-tabs__link">
+          
+  
+  
+  Python程序设计
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../RS/chapter1/" class="md-tabs__link">
+          
+  
+  
+  遥感概论
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../WebGIS/review/" class="md-tabs__link">
+          
+  
+  
+  GIS应用开发
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lecture1/" class="md-tabs__link">
+          
+  
+  
+  地理空间数据库
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Learning at School" class="md-nav__button md-logo" aria-label="Learning at School" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learning at School
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stylistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    英语文体学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地图学
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    地图学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cartograhpy/note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cartograhpy/exams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    历年卷
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    现代气候学
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    现代气候学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Climatology/review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Climatology/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    历年题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据结构基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据结构基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/fds_lecture1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    算法分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/fds_lecture2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    列表、栈、队列
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/fds_lecture3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/fds_lecture4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    堆
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/fds_lecture5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    并查集
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/segment_tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线段树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/graph_algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/hashing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    哈希表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统计学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    统计学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StatisticalLearning/knn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KNN 与偏差-方差权衡
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StatisticalLearning/linearreg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性回归模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StatisticalLearning/causal_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因果推断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MachineLearning/review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python程序设计
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python程序设计
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论部分复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感概论
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    遥感概论
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/chapter1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    绪论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/chapter2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感物理基础A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/chapter3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感物理基础B
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/chapter4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感物理基础C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/chapter5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感物理基础D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/chapter6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感成像系统A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/chapter7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感成像系统B
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/chapter8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感图像处理A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/chapter9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感图像处理B
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/chapter10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感影像目视解译与制图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/chapter11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感影像计算机解译
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RS/exam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    历年卷
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GIS应用开发
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GIS应用开发
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WebGIS/review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论部分复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WebGIS/front_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前端代码复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地理空间数据库
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    地理空间数据库
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lecture1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lecture2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关系模型与关系代数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lecture3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关系数据库标准语言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    几何对象模型与查询
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    几何对象模型与查询
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空间数据模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="空间数据模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注记文本模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        几何对象模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="几何对象模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概念模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概念模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一些常见几何对象
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        补充说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空间拓扑关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九交模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-9im" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        维数扩展的九交模型 DE-9IM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        几何对象的方法 / 函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逻辑模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="逻辑模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于预定义数据类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于扩展几何类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        物理模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="物理模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wkb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WKB 表达
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WKT 表达
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postgis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostGIS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PostGIS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostGIS 常用数据类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        矢量数据的常见操作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="矢量数据的常见操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        管理函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构造函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        访问函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编辑函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        几何处理函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        几何操作符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空间关系函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        量测函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        线性参考
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lecture5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    空间扩展 E/R 图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空间数据模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="空间数据模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注记文本模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        几何对象模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="几何对象模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概念模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概念模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一些常见几何对象
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        补充说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空间拓扑关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九交模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-9im" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        维数扩展的九交模型 DE-9IM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        几何对象的方法 / 函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逻辑模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="逻辑模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于预定义数据类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于扩展几何类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        物理模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="物理模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wkb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WKB 表达
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WKT 表达
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postgis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostGIS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PostGIS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostGIS 常用数据类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        矢量数据的常见操作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="矢量数据的常见操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        管理函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构造函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        访问函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编辑函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        几何处理函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        几何操作符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空间关系函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        量测函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        线性参考
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">几何对象模型与查询<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">空间数据模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">概念<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>空间数据模型是对空间信息的一种数据组织方式，具体组织思路有对象模型、场模型、网络模型。</p>
+<p>现有的空间数据库都是基于某种空间数据模型。</p>
+<h3 id="_4">分类<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>GIS 中两大常见的数据模型：</p>
+<ul>
+<li>矢量模型，利用点、线、多边形的形式来表达现实世界<ul>
+<li>几何模型，关注地物精确形状<ul>
+<li>对象模型，不包含拓扑关系</li>
+<li>拓扑模型，包含拓扑关系</li>
+</ul>
+</li>
+<li>网络模型，关注地物连通关系</li>
+</ul>
+</li>
+<li>栅格模型，以二维矩阵的形式来表示空间地物或现象分布的数据组织方式</li>
+</ul>
+<h4 id="_5">注记文本模型<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>GIS 注记分为三类：</p>
+<ul>
+<li>注记标签。选择要素层中的某个属性值作为标记，附着在各要素的旁边显示，与要素具有正式的连接关系。</li>
+<li>
+<p>注记文本。独立于要素层的一个文本数据集，由一些有序的格子独立放置的文本元素组成，可能沿着地理要素的方向、根据地理要素的范围进行放置，与地理要素无正式连接。
+    &gt;⚠️注记文本与点、线、多边形一样算一种类型的要素</p>
+</li>
+<li>
+<p>注记尺寸。用于标注几何体长、宽、高数值的注记。</p>
+</li>
+</ul>
+<h2 id="_6">几何对象模型<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>地理要素是对现实世界空间现象的抽象，由几何、属性、行为三类信息构成，其中几何的建模是数据库管理系统关心的基础问题。</p>
+<p>关键是选择一组基本空间数据类型来满足地图常用几何信息的建模要求，其中 Open Geospatial Consortium 模型规范已逐渐得到认可。</p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>OGC仅能表达和处理简单的几何对象，即不自相交的几何对象。</p>
+</div>
+<h3 id="_7">概念模型<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>几何对象模型利用对象关系型数据库中的扩展数据类型（包括数据+方法）实现，类似于面向对象语言。</p>
+<p>核心是一个依赖于空间参考系和测量参考系的几何类，派生出点、线、面、多点、多线、多面等类型。</p>
+<h4 id="_8">一些常见几何对象<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>点。零维几何对象类，代表空间中一个点。</p>
+</li>
+<li>
+<p>曲线。由点序列描述一维的几何对象类。</p>
+</li>
+<li>
+<p>折线。曲线的子类，采用线性插值。</p>
+</li>
+<li>
+<p>线段。折线的特例。</p>
+</li>
+<li>
+<p>环线。由折线派生而来，闭合的、不自相交或相切的折线。</p>
+</li>
+<li>
+<p>面。二维几何对象类，代表一个外边界、零到多个内边界组成的几何对象。三维空间中则可能是一个同构的曲面。</p>
+</li>
+<li>
+<p>多边形。二维坐标空间中由一个外边界、零到多个内边界定义的平坦表面，由一个或一个以上的线环聚合而成。暂不支持曲线。</p>
+<blockquote>
+<p>⚠️要求多边形内部连通，内环与外环、内环与内环之间不能有重叠线，最多在有限个点处相交</p>
+</blockquote>
+</li>
+<li>
+<p>三角形。多边形类的一个特例。</p>
+</li>
+<li>
+<p>体表面。由简单面沿它们的边界缝合而成。</p>
+</li>
+<li>
+<p>不规则三角网 TIN 。体表面的一个特例，由多个有公共边的连续三角形聚合。</p>
+</li>
+<li>
+<p>几何集合。由一个或多个几何对象组成的集合，其中的元素必须具有相同空间参考系和测量参考系。</p>
+</li>
+<li>
+<p>多点。零维的几何类集合，由多个点聚合而成，代表空间中的多个点。</p>
+</li>
+<li>
+<p>多面。二维的几何集合类，由多个面聚合而成。</p>
+</li>
+<li>
+<p>多多边形。多面的子类，由多个多边形对象聚合而成。</p>
+<blockquote>
+<p>⚠️注意各多边形内部不能相交，边界只能在有限个点相交</p>
+</blockquote>
+</li>
+<li>
+<p>多曲线。一维的几何类，由多条曲线聚合而成。</p>
+</li>
+<li>
+<p>多折线。多曲线类的子类，由多条折线聚合而成。</p>
+</li>
+</ul>
+<h4 id="_9">补充说明<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ol>
+<li>任何几何模型都有其边界、内部和外部</li>
+<li>边界：一个几何实体界限的集合，几何维数是其本身几何形状的维数减一</li>
+<li>内部：几何对象除边界外的所有直接位置的集合</li>
+<li>
+<p>外部：空间全域与几何闭包之差</p>
+</li>
+<li>
+<p>几何对象除了由 <span class="arithmatex">\(x\)</span> 、<span class="arithmatex">\(y\)</span> 、<span class="arithmatex">\(z\)</span> 描述的坐标维数，还可以有一个 <span class="arithmatex">\(M\)</span> 坐标，可以理解为与距离度量有关的一个属性值，注意要符合线性参考系统。</p>
+</li>
+<li>
+<p>线性参考系统是沿线性网络要素，采用相对方位来存储地理位置的方法。基于该表达，只要指定沿某个线性构造的起点和终点，就能动态参考和构造此线性要素的各个部分，无需直接存储各部分的空间数据。</p>
+</li>
+</ol>
+<h4 id="_10">空间拓扑关系<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>一共八种</p>
+<ul>
+<li>相离 disjoint</li>
+<li>相交 intersects</li>
+<li>包含于 within</li>
+<li>包含 contains</li>
+<li>
+<p>相接 touches ：两个对象内部交集为空，边界交集非空</p>
+<blockquote>
+<p>⚠️点或多点都不能与任何对象相接，因为点的内部是它自身，没有边界</p>
+</blockquote>
+</li>
+<li>
+<p>相等 equals</p>
+</li>
+<li>
+<p>交叠 overlaps ：两个维数相同的对象交集维数也相同，并且不能有包含关系</p>
+</li>
+<li>
+<p>穿越 crosses ：两个对象内部必须相交，并且交集的维数低于二者中较高的维数，不能含有包含关系</p>
+</li>
+</ul>
+<h4 id="_11">九交模型<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>对于两个二维的空间物体，可以通过九种空间关系来描述它们之间的拓扑关系，通常排成一个 <span class="arithmatex">\(3 \times 3\)</span> 的矩阵。即边界 Bo 、内部 In 、外部 Ex 之间两两是否有交集。</p>
+<div class="arithmatex">\[
+\mathrm{Matrix}(A,B)=
+\begin{pmatrix}
+\mathrm{In}(A)\cap\mathrm{In}(B) &amp; \mathrm{In}(A)\cap\mathrm{Bo}(B) &amp; \mathrm{In}(A)\cap\mathrm{Ex}(B) \\
+\mathrm{Bo}(A)\cap\mathrm{In}(B) &amp; \mathrm{Bo}(A)\cap\mathrm{Bo}(B) &amp; \mathrm{Bo}(A)\cap\mathrm{Ex}(B) \\
+\mathrm{Ex}(A)\cap\mathrm{In}(B) &amp; \mathrm{Ex}(A)\cap\mathrm{Bo}(B) &amp; \mathrm{Ex}(A)\cap\mathrm{Ex}(B)
+\end{pmatrix}
+\]</div>
+<h4 id="de-9im">维数扩展的九交模型 DE-9IM<a class="headerlink" href="#de-9im" title="Permanent link">&para;</a></h4>
+<p>维数扩展的九交模型进一步计算两个二维空间物体的边界、内部、外部两两交集的维数，用 -1 表示空集，0 、1 、2 分别表示对应维数的交集。</p>
+<h4 id="_12">几何对象的方法 / 函数<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>Dimension():Integer</code> 获取几何对象的几何维数</p>
+</li>
+<li>
+<p><code>CoordinateDimension():Integer</code> 获取几何对象的坐标维数</p>
+</li>
+<li>
+<p><code>GeometryType():String</code> 获取几何的数据类型，如点、线、面等</p>
+</li>
+<li>
+<p><code>SRID():Integer</code> 获取几何类型的空间参考系</p>
+</li>
+<li>
+<p><code>Envelope():Geometry</code> 获取 Geometry 的最小边界矩形</p>
+</li>
+<li>
+<p><code>AsText():String</code> 返回 WKT 的表达形式，不包含 SRID 元数据</p>
+</li>
+<li>
+<p><code>AsBinary():String</code> 返回 WKB 的表达形式，不包含 SRID 元数据</p>
+</li>
+<li>
+<p><code>IsEmpty():Boolean</code> 判断几何类型是否为空</p>
+</li>
+<li>
+<p><code>IsSimple():Boolean</code> 判断几何类型是否是简单的</p>
+</li>
+<li>
+<p><code>Is3D():Boolean</code> 判断几何类型是否有 z 坐标</p>
+</li>
+<li>
+<p><code>IsMeasured():Boolean</code> 判断几何类型是否有 M 值</p>
+</li>
+<li>
+<p><code>Boundary():Geometry</code> 获取几何类型的边界</p>
+</li>
+<li>
+<p><code>Distance(another:Geometry):Distance</code> 求两个 Geometry 间的距离</p>
+</li>
+<li>
+<p><code>Buffer(distance:Distance):Geometry</code> 求 Geometry 满足某个距离要求的缓冲区</p>
+</li>
+<li>
+<p><code>ConvexHull():Geometry</code> 求 Geometry 的凸包</p>
+</li>
+<li>
+<p><code>Intersection(another:Geometry):Geometry</code> 求两个 Geometry 的交</p>
+</li>
+<li>
+<p><code>Union(another:Geometry):Geometry</code> 求两个 Geometry 的并</p>
+</li>
+<li>
+<p><code>Difference(another:Geometry):Geometry</code> 求两个 Geometry 的差</p>
+</li>
+<li>
+<p><code>SymDifference(another:Geometry):Geometry</code> 求两个 Geometry 的对称差</p>
+</li>
+<li>
+<p><code>Equals(another:Geometry):Boolean</code> 判断两个 Geometry 是否相等</p>
+</li>
+<li>
+<p><code>Disjoint(another:Geometry):Boolean</code> 判断两个 Geometry 是否相离</p>
+</li>
+<li>
+<p><code>Intersects(another:Geometry):Boolean</code> 判断两个 Geometry 是否相交</p>
+</li>
+<li>
+<p><code>Touches(another:Geometry):Boolean</code> 判断两个 Geometry 是否相接</p>
+</li>
+<li>
+<p><code>Crosses(another:Geometry):Boolean</code> 判断 Geometry 是否穿越另一个 Geometry</p>
+</li>
+<li>
+<p><code>Within(another:Geometry):Boolean</code> 判断 Geometry 是否包含于另一个 Geometry</p>
+</li>
+<li>
+<p><code>Contains(another:Geometry):Boolean</code> 判断 Geometry 是否包含另一个 Geometry</p>
+</li>
+<li>
+<p><code>Overlaps(another:Geometry):Boolean</code> 判断两个 Geometry 是否交叠</p>
+</li>
+<li>
+<p><code>Relates(another:Geometry, matrix:String):Boolean</code> 判断两个 Geometry 是否符合给定的九交矩阵</p>
+</li>
+<li>
+<p><code>LocateAlong(mValue:Double):Geometry</code> 选取 M 值为 mValue 的点，形成一个新 Geometry</p>
+</li>
+<li>
+<p><code>LocateBetween(mStart:Double, mEnd:Double):Geometry</code> 选取 M 值在 mStart 和 mEnd 之间的点，形成一个新 Geometry</p>
+</li>
+</ul>
+<h3 id="_13">逻辑模型<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>基于概念模型，OGC 提出了基于预定义数据类型和基于扩展几何类型的两种实现方法。</p>
+<h4 id="_14">基于预定义数据类型<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p>利用关系数据库中已有的数字 numeric 类型或者二进制大对象 BLOB 类型实现空间数据的存储和惯例，这些数据类型的解释和维护由 DBMS 负责。将相关空间数据的访问方法作为扩展函数嵌入 DBMS 。</p>
+<ul>
+<li>
+<p>几何列表 GEOMETRY_COLUMNS 、空间参考系表 SPATIAL_REF_SYS ：系统表，存储用户表的元数据信息。</p>
+<ul>
+<li>GEOMETRY_COLUMNS 表记录数据库中所有 Feature 表及其几何列的属性</li>
+<li>SPATIAL_REF_SYS 表记录该数据库所支持的所有空间参考系</li>
+</ul>
+</li>
+<li>
+<p>要素表 Feature 、几何表 Geometry ：用户表，存储空间数据。</p>
+<ul>
+<li>Feature 表记录一组具有相同属性和行为的地理要素的集合</li>
+<li>Geometry 表记录几何类型的空间坐标</li>
+</ul>
+<blockquote>
+<p>numeric 和 BLOB 二者的区别是几何表结构不同，前者将几何类型的空间坐标作为数值存储，后者以 WKB 形式存储。</p>
+</blockquote>
+</li>
+</ul>
+<p><img alt="示意图" src="../defined_db.png" /></p>
+<h4 id="_15">基于扩展几何类型<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<p>利用对象关系数据库中对抽象数据类型的支持，定义 Geometry 类型及其相关的方法与函数，并用该扩展几何类型实现空间数据的存储和管理。</p>
+<ul>
+<li>
+<p>几何列表 GEOMETRY_COLUMNS 、空间参考系表 SPATIAL_REF_SYS ：系统表，存储元数据信息。</p>
+</li>
+<li>
+<p>要素表 Feature ：用户表，存储属性数据和空间数据</p>
+</li>
+</ul>
+<p><img alt="基于扩展Geometry类的示意" src="../geometry_db.png" /></p>
+<h3 id="_16">物理模型<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>OGC SFA 规定了两种标准几何数据表示格式，用于表达和交换几何对象。</p>
+<h4 id="wkb">WKB 表达<a class="headerlink" href="#wkb" title="Permanent link">&para;</a></h4>
+<p>SFA SQL 给出一种几何数据的二进制方式的存储格式，将数字类型串行化为网络数据表示或外部数据表示，存储在磁盘上。</p>
+<h4 id="wkt">WKT 表达<a class="headerlink" href="#wkt" title="Permanent link">&para;</a></h4>
+<p>OGC 还提供一种基于文本格式几何数据交汇标准表达方式。</p>
+<blockquote>
+<p>⚠️WKB 和 WKT 只支持二维几何对象的表达，并没有任何有关空间参考系的信息。</p>
+</blockquote>
+<h2 id="postgis">PostGIS<a class="headerlink" href="#postgis" title="Permanent link">&para;</a></h2>
+<p>PostGIS 是对象关系型数据库系统 PostgreSQL 的一个空间扩展，提供空间对象、空间索引、空间操作函数和空间操作符等空间信息服务功能。采用对象类型 + 函数的形式实现。</p>
+<h3 id="postgis_1">PostGIS 常用数据类型<a class="headerlink" href="#postgis_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><code>boolean</code> 布尔类型</p>
+</li>
+<li>
+<p><code>box2d</code> 矩形框类型，由矩形左下角和右上角组成</p>
+</li>
+<li>
+<p><code>box3d</code> 长方体类型，由左前下角和右后上角组成</p>
+</li>
+<li>
+<p><code>bytea</code> 相当于 BLOB 类型，可变长的二进制值</p>
+</li>
+<li>
+<p><code>integer</code> 字节为 4 的整数</p>
+</li>
+<li>
+<p><code>double precision</code> 字节为 8 的浮点数</p>
+</li>
+<li>
+<p><code>geometry</code> 几何类型</p>
+</li>
+<li>
+<p><code>geometry[]</code> 几何数据类型数组</p>
+</li>
+<li>
+<p><code>geometry set</code> 几何数据类型的集合</p>
+</li>
+<li>
+<p><code>raster</code> 栅格类型</p>
+</li>
+<li>
+<p><code>setof geomval</code> 几何对象与值对的几何，用于返回几个对象及与该集合对象对应的栅格值</p>
+</li>
+<li>
+<p><code>text</code> 文本类型</p>
+</li>
+<li>
+<p><code>character varying</code> 相当于 BLOB 类型，可变长的文本描述</p>
+</li>
+</ul>
+<h2 id="_17">矢量数据的常见操作<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<h3 id="_18">管理函数<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>AddGeometryColumn(varchar, varchar, varchar, int4, varchar, int4)</code> 添加几何字段</li>
+</ul>
+<blockquote>
+<p>几何属性也可以在创建关系时直接创建</p>
+</blockquote>
+<ul>
+<li>
+<p><code>DropGeometryColumn(varchar, varchar, varchar)</code> 删除几何字段</p>
+</li>
+<li>
+<p><code>DropGeometryTable(varchar, varchar)</code> 删除一个空间表</p>
+</li>
+<li>
+<p><code>ProbeGeometryColumns()</code> 检查数据库几何字段并在系统表中归档</p>
+</li>
+<li>
+<p><code>ST_SetSRID(geometry, int4)</code> 设置几何对象的空间参考</p>
+</li>
+<li>
+<p><code>UpdateGeometrySRID(varchar, varchar, int4)</code> 更新空间表的空间参考</p>
+</li>
+<li>
+<p><code>UpdateGeometryStats(varchar, varchar)</code> 更新空间表的统计信息</p>
+</li>
+</ul>
+<h3 id="_19">构造函数<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>根据给定的几何描述，构造相应几何对象：</p>
+<ul>
+<li>
+<p><code>ST_GeomCollFromText(text, [])</code> 根据 WKT 表达生成多几何对象</p>
+</li>
+<li>
+<p><code>ST_GeomCollFromWKB(bytea, [])</code> 根据 WKB 表达生成多几何对象</p>
+</li>
+<li>
+<p><code>ST_GeomFromGML</code> 根据 GML 表达生成几何对象</p>
+</li>
+<li>
+<p><code>ST_GeomFromText</code> 根据 WKT 表达生成几何对象</p>
+</li>
+<li>
+<p><code>ST_GeomFromWKB</code> 根据 WKB 表达生成几何对象</p>
+</li>
+<li>
+<p><code>ST_LineFromMultiPoint(geometry)</code> 根据多点表达生成线串</p>
+</li>
+<li>
+<p><code>ST_LineFromText(text, [])</code> 根据 WKT 表达生成线串</p>
+</li>
+<li>
+<p><code>ST_LineFromWKB(bytea, [])</code> 根据 WKB 表达生成线串</p>
+</li>
+<li>
+<p><code>ST_Point(float, float)</code> 根据给定的点对生成点</p>
+</li>
+<li>
+<p><code>ST_PolyFromText(text, [])</code> 根据 WKT 表达生成多边形</p>
+</li>
+<li>
+<p><code>ST_PolyFromWKB(bytea, [])</code> 根据 WKB 表达生成多边形</p>
+</li>
+<li>
+<p><code>ST_Polygon(geometry, integer)</code> 根据给定的线串、SRID ，生成多边形</p>
+</li>
+</ul>
+<h3 id="_20">访问函数<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>获取几何对象的相关属性信息：</p>
+<ul>
+<li>
+<p><code>ST_Dimension(geometry)</code> 获取几何对象的维数</p>
+</li>
+<li>
+<p><code>ST_EndPoint(geometry)</code> 获取线的终点</p>
+</li>
+<li>
+<p><code>ST_Envelope(geometry)</code> 以多边形的形式返回几何对象的 MBR</p>
+</li>
+<li>
+<p><code>ST_ExteriorRing(geometry)</code> 获取几何对象的外环</p>
+</li>
+<li>
+<p><code>ST_GeometryType(geometry)</code> 获取几何对象类型</p>
+</li>
+<li>
+<p><code>ST_GeometryN(geometry, int4)</code> 获取多几何对象的第 N 个对象</p>
+</li>
+<li>
+<p><code>ST_InteriorRingN(geometry, int4)</code> 获取多边形的第 N 个内环</p>
+</li>
+<li>
+<p><code>ST_IsClosed(geometry)</code> 判断几何对象是否闭合</p>
+</li>
+<li>
+<p><code>ST_IsEmpty(geometry)</code> 判断几何对象是否为空</p>
+</li>
+<li>
+<p><code>ST_IsRing(geometry)</code> 判断曲线是否闭合并且简单</p>
+</li>
+<li>
+<p><code>ST_IsSimple(geometry)</code> 判断几何对象是否简单</p>
+</li>
+<li>
+<p><code>ST_M(geometry)</code> 获得点对象的 <span class="arithmatex">\(M\)</span> 值</p>
+</li>
+<li>
+<p><code>ST_NumGeometries(geometry)</code> 获取多几何对象中的对象个数</p>
+</li>
+<li>
+<p><code>ST_NumInteriorRings(geometry)</code> 获取多边形内部环的个数</p>
+</li>
+<li>
+<p><code>ST_NumPoints(geometry)</code> 获取线串中顶点个数</p>
+</li>
+<li>
+<p><code>ST_PointN(geometry)</code> 获取几何对象第一个线串中的第 N 个点</p>
+</li>
+<li>
+<p><code>ST_SRID(geometry)</code> 获取几何对象的空间参考 ID</p>
+</li>
+<li>
+<p><code>ST_StartPoint(geometry)</code> 获取线的起点</p>
+</li>
+<li>
+<p><code>ST_X(geometry)</code> / <code>ST_Y(geometry)</code> / <code>ST_Z(geometry)</code> 获取点对象的某一坐标</p>
+</li>
+</ul>
+<h3 id="_21">编辑函数<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p>增加、删除、修改几何对象的坐标信息：</p>
+<ul>
+<li>
+<p><code>ST_AddBBox</code></p>
+</li>
+<li>
+<p><code>ST_AddPoint</code></p>
+</li>
+<li>
+<p><code>ST_Affine</code></p>
+</li>
+<li>
+<p><code>ST_DropBBox</code></p>
+</li>
+<li>
+<p><code>ST_LineMerge</code></p>
+</li>
+<li>
+<p><code>ST_Multi</code></p>
+</li>
+<li>
+<p><code>ST_RemovePoint</code></p>
+</li>
+<li>
+<p><code>ST_Reverse</code></p>
+</li>
+<li>
+<p><code>ST_Rotate</code></p>
+</li>
+<li>
+<p><code>ST_Scale</code></p>
+</li>
+<li>
+<p><code>ST_Segmentize(geometry, float8)</code></p>
+</li>
+<li>
+<p><code>ST_SetPoint</code></p>
+</li>
+<li>
+<p><code>ST_SnapToGrid</code></p>
+</li>
+<li>
+<p><code>ST_Transform</code></p>
+</li>
+<li>
+<p><code>ST_Translate</code></p>
+</li>
+<li>
+<p><code>ST_TransScale</code></p>
+</li>
+</ul>
+<h3 id="_22">几何处理函数<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>获取一些衍生的几何对象：</p>
+<ul>
+<li>
+<p><code>ST_Buffer</code> 获取几何对象的缓冲区</p>
+</li>
+<li>
+<p><code>ST_Boundary</code> 获取几何对象的边界</p>
+</li>
+<li>
+<p><code>ST_Centroid</code> 获取几何对象的质心</p>
+</li>
+<li>
+<p><code>ST_ConvexHull</code> 获取几何对象的凸包</p>
+</li>
+<li>
+<p><code>ST_Difference</code> 获取 <span class="arithmatex">\(A - B\)</span> 的几何形状</p>
+</li>
+<li>
+<p><code>ST_Intersection</code> 获取两个几何对象相交的部分</p>
+</li>
+<li>
+<p><code>ST_MemUnion</code> 返回 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 合并后的几何（内存占用少，花费时间长）</p>
+</li>
+<li>
+<p><code>ST_Union</code> 返回 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 合并后的几何</p>
+</li>
+<li>
+<p><code>ST_PointOnSurface</code> 返回曲面上的点</p>
+</li>
+<li>
+<p><code>ST_ShiftLongitude</code> 使经度在 0 到 360 <span class="arithmatex">\(^\circ\)</span> 之间</p>
+</li>
+<li>
+<p><code>ST_SymDifference</code> 获取 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 不相交的部分</p>
+</li>
+</ul>
+<h3 id="_23">几何操作符<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p>使用的对象必须有空间索引</p>
+<ul>
+<li>
+<p><code>=</code> 判断两个几何对象是否相等</p>
+</li>
+<li>
+<p><code>~=</code> 判断两个几何对象是否不相等 </p>
+</li>
+<li>
+<p><code>&amp;&lt;&gt;</code> 判断 A 是否覆盖 B 或在 B 左侧</p>
+</li>
+<li>
+<p><code>&lt;&lt;&gt;&gt;</code> 判断 A 是否在 B 左侧</p>
+</li>
+<li>
+<p><code>&amp;&lt;|</code> 判断 A 是否覆盖 B 或在 B 下方</p>
+</li>
+<li>
+<p><code>|&amp;&gt;</code> 判断 A 是否覆盖 B 或在 B 上方</p>
+</li>
+<li>
+<p><code>&lt;&lt;|</code> 判断 A 是否在 B 下方</p>
+</li>
+<li>
+<p><code>|&gt;&gt;</code> 判断 A 是否在 B 上方</p>
+</li>
+<li>
+<p><code>@</code> 判断 A 是否被 B 包含</p>
+</li>
+<li>
+<p><code>~</code> 判断 A 是否包含 B </p>
+</li>
+<li>
+<p><code>&amp;&amp;</code> 判断 A 是否覆盖 B</p>
+</li>
+</ul>
+<h3 id="_24">空间关系函数<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>判断两几何对象的拓扑关系：</p>
+<ul>
+<li>
+<p><code>ST_Contains</code> 是否包含</p>
+</li>
+<li>
+<p><code>ST_Covers</code> 是否覆盖</p>
+</li>
+<li>
+<p><code>ST_CoveredBy</code> 是否被覆盖</p>
+</li>
+<li>
+<p><code>ST_Crosses</code> 是否相互穿过</p>
+</li>
+<li>
+<p><code>ST_Disjoint</code> 是否相离</p>
+</li>
+<li>
+<p><code>ST_DWithin</code> 距离是否在给定值内</p>
+</li>
+<li>
+<p><code>ST_Equals</code> 是否相等</p>
+</li>
+<li>
+<p><code>ST_Intersects</code> 是否相交</p>
+</li>
+<li>
+<p><code>ST_Overlaps</code> 是否重叠</p>
+</li>
+<li>
+<p><code>ST_Relate</code> 是否符合给定的九交模型矩阵或者获取维数扩展的九交模型（根据输入来确定输出）</p>
+</li>
+<li>
+<p><code>ST_Touches</code> 是否相接</p>
+</li>
+<li>
+<p><code>ST_Within</code> 是否被包含</p>
+</li>
+</ul>
+<h3 id="_25">量测函数<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p>获取几何对象的各类测量值：</p>
+<ul>
+<li>
+<p><code>ST_Area</code> 计算面积</p>
+</li>
+<li>
+<p><code>ST_Azimuth</code> 计算两点构成的方位角</p>
+</li>
+<li>
+<p><code>ST_Distance</code> 计算两几何对象的距离</p>
+</li>
+<li>
+<p><code>ST_DistanceSphere</code> 计算两几何对象的球面距离（单位米）</p>
+</li>
+<li>
+<p><code>ST_DistanceSpheroid</code> 计算地球曲面上两点间最短距离，比上一个准确度更高</p>
+</li>
+<li>
+<p><code>ST_Length2d</code> 计算二维坐标距离</p>
+</li>
+<li>
+<p><code>ST_Length3d</code> 计算三维坐标距离</p>
+</li>
+<li>
+<p><code>ST_LengthSpheroid</code> 根据给定的地球椭球参数，计算几何对象在地球曲面上的长度</p>
+</li>
+<li>
+<p><code>ST_MaxDistance</code> 计算两个对象间的最大距离</p>
+</li>
+<li>
+<p><code>ST_Perimeter</code> 计算二维坐标空间的周长</p>
+</li>
+<li>
+<p><code>ST_3DPerimeter</code> 计算三维坐标空间的周长</p>
+</li>
+</ul>
+<h3 id="_26">线性参考<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<p>获取线性参考系下的部分几何对象，只对点和线有效：</p>
+<ul>
+<li>
+<p><code>ST_LineInterpolatePoint</code> 插值点</p>
+</li>
+<li>
+<p><code>ST_LineLocatePoint</code> 计算位置参数</p>
+</li>
+<li>
+<p><code>ST_LineSubstring</code> 计算线段</p>
+</li>
+<li>
+<p><code>ST_LocateAlongMeasre</code> 返回与给定测量值匹配的几何对象</p>
+</li>
+<li>
+<p><code>ST_LocateBetweenMeasure</code> 返回与给定测量值匹配的几何对象</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../lecture3/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 关系数据库标准语言">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                关系数据库标准语言
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../lecture5/" class="md-footer__link md-footer__link--next" aria-label="下一页: 空间扩展 E/R 图">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                空间扩展 E/R 图
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "navigation.sections", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../../javascripts/cover-typewriter.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="../../../assets/vendor/mathjax/3.2.2/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3671 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="学校的课程笔记和学习资料maybe">
+      
+      
+        <meta name="author" content="MJ">
+      
+      
+        <link rel="canonical" href="https://whereismycake.github.io/Courses_School/ZJUcourse/RS/chapter2/">
+      
+      
+        <link rel="prev" href="../chapter1/">
+      
+      
+        <link rel="next" href="../chapter3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>遥感物理基础A - Learning at School</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Learning at School" class="md-header__button md-logo" aria-label="Learning at School" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning at School
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              遥感物理基础A
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../stylistics/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  英语文体学
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cartograhpy/note/" class="md-tabs__link">
+          
+  
+  
+  地图学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Climatology/review/" class="md-tabs__link">
+          
+  
+  
+  现代气候学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../FDS/fds_lecture1/" class="md-tabs__link">
+          
+  
+  
+  数据结构基础
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../StatisticalLearning/knn/" class="md-tabs__link">
+          
+  
+  
+  统计学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MachineLearning/review/" class="md-tabs__link">
+          
+  
+  
+  机器学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Python/python/" class="md-tabs__link">
+          
+  
+  
+  Python程序设计
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../chapter1/" class="md-tabs__link">
+          
+  
+  
+  遥感概论
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../WebGIS/review/" class="md-tabs__link">
+          
+  
+  
+  GIS应用开发
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SDBMS/lecture1/" class="md-tabs__link">
+          
+  
+  
+  地理空间数据库
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Learning at School" class="md-nav__button md-logo" aria-label="Learning at School" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learning at School
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stylistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    英语文体学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地图学
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    地图学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cartograhpy/note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cartograhpy/exams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    历年卷
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    现代气候学
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    现代气候学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Climatology/review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Climatology/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    历年题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据结构基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据结构基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/fds_lecture1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    算法分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/fds_lecture2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    列表、栈、队列
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/fds_lecture3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/fds_lecture4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    堆
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/fds_lecture5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    并查集
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/segment_tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线段树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/graph_algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FDS/hashing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    哈希表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统计学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    统计学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StatisticalLearning/knn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KNN 与偏差-方差权衡
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StatisticalLearning/linearreg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性回归模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StatisticalLearning/causal_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因果推断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MachineLearning/review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python程序设计
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python程序设计
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论部分复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感概论
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    遥感概论
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    绪论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感物理基础A
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感物理基础A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 遥感物理基础
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 遥感物理研究内容
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 遥感物理研究内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        地面波谱测试、分析与模型发展
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空中遥感器性能分析与评价
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定量化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 建模、反演与波谱测量
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 电磁波谱
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 电磁波谱">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 基本概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 与遥感相关的主要参量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 紫外线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 可见光
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 红外
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 红外">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        波段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        热红外
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 微波
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6 微波">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        波段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7 米波
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 电磁波极限分辨率
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 电磁波 / 电磁辐射的传播
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 电磁波 / 电磁辐射的传播">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 反射、折射与偏振
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 吸收
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 散射
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 电磁辐射的度量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 电磁辐射的度量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 辐射源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-q" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 辐射能量 \(Q\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-phi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 辐射通量 \(\Phi\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 辐射通量密度 \(E\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-l" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 辐射亮度 \(L\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 黑体辐射
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 黑体辐射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 绝对黑体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 黑体辐射特性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 普朗克定律的延伸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 黑体温度与颜色的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 实际物体辐射
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 实际物体辐射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 基尔霍夫定律
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-epsilon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 地物发射率 \(\epsilon\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 灰体
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 太阳辐射
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 太阳辐射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 太阳常数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 太阳总辐射通量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 太阳光谱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 特点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感物理基础B
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感物理基础C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感物理基础D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感成像系统A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感成像系统B
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感图像处理A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感图像处理B
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感影像目视解译与制图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    遥感影像计算机解译
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    历年卷
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GIS应用开发
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GIS应用开发
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WebGIS/review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论部分复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WebGIS/front_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前端代码复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地理空间数据库
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    地理空间数据库
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDBMS/lecture1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDBMS/lecture2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关系模型与关系代数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDBMS/lecture3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关系数据库标准语言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDBMS/lecture4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    几何对象模型与查询
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDBMS/lecture5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    空间扩展 E/R 图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 遥感物理基础
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 遥感物理研究内容
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 遥感物理研究内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        地面波谱测试、分析与模型发展
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空中遥感器性能分析与评价
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定量化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 建模、反演与波谱测量
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 电磁波谱
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 电磁波谱">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 基本概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 与遥感相关的主要参量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 紫外线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 可见光
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 红外
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 红外">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        波段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        热红外
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 微波
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6 微波">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        波段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7 米波
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 电磁波极限分辨率
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 电磁波 / 电磁辐射的传播
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 电磁波 / 电磁辐射的传播">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 反射、折射与偏振
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 吸收
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 散射
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 电磁辐射的度量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 电磁辐射的度量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 辐射源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-q" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 辐射能量 \(Q\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-phi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 辐射通量 \(\Phi\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 辐射通量密度 \(E\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-l" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 辐射亮度 \(L\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 黑体辐射
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 黑体辐射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 绝对黑体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 黑体辐射特性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 普朗克定律的延伸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 黑体温度与颜色的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 实际物体辐射
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 实际物体辐射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 基尔霍夫定律
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-epsilon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 地物发射率 \(\epsilon\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 灰体
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 太阳辐射
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 太阳辐射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 太阳常数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 太阳总辐射通量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 太阳光谱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 特点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="a">遥感物理基础 A<a class="headerlink" href="#a" title="Permanent link">&para;</a></h1>
+<h2 id="1">1 遥感物理基础<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>电磁辐射从辐射源到遥感器之间的传输过程中，要经历吸收、再辐射、反射、散射、偏振及波谱重新分布等一系列过程。</p>
+</li>
+<li>
+<p>地球表面物体地物由于其电子、离子 、分子以及晶体的振动和转动等物理过程而具有波谱特性（分为原子光谱、分子光谱、固体（晶格结构）光谱）。</p>
+</li>
+<li>
+<p>不同的地物由于其组成成分、内部结构和表面状态以及时间、空间环境的不同，它们辐射、反射、吸收和透射等电磁波谱特性也不同。而且许多地物在可见光至热红外波段内都具有与它们组分有关的光谱吸收特征，而且许多地物的光谱吸收特征具有专一性。</p>
+</li>
+<li>
+<p>遥感物理就是研究和了解电磁辐射与地物相互作用的机理和过程，这对认识所获得的遥感数据以及识别地物目标是必不可少、至关重要的研究内容。</p>
+</li>
+</ul>
+<h2 id="2">2 遥感物理研究内容<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="_1">地面波谱测试、分析与模型发展<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>可见光、短波红外、热红外、微波</p>
+</li>
+<li>
+<p>反射、发射、散射、偏振、方向特性</p>
+</li>
+<li>
+<p>成分、状态、结构</p>
+</li>
+<li>
+<p>统计、物理、综合分析</p>
+</li>
+</ul>
+<h3 id="_2">空中遥感器性能分析与评价<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>空间分辨率</p>
+</li>
+<li>
+<p>时间分辨率</p>
+</li>
+<li>
+<p>信噪比</p>
+</li>
+<li>
+<p>光谱分辨率</p>
+</li>
+<li>
+<p>辐射动态范围</p>
+</li>
+<li>
+<p>等效噪声温差</p>
+</li>
+</ul>
+<h3 id="_3">定量化<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>定量</p>
+</li>
+<li>
+<p>大气校正</p>
+</li>
+<li>
+<p>物理量定量反演</p>
+</li>
+<li>
+<p>地形校正</p>
+</li>
+<li>
+<p>尺度转换</p>
+</li>
+<li>
+<p>角度校正</p>
+</li>
+</ul>
+<h2 id="3">3 建模、反演与波谱测量<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>建模：指针对某种物理过程，建立与之对应的数学方程或方程组的问题。</p>
+</li>
+<li>
+<p>反演：基于模型知识基础上，依据可测参数值去反推目标的实时状态参数，就是用已知值推未知值，就像解方程或解方程组的问题。</p>
+</li>
+</ul>
+<p>都需要地面测量数据作为先验知识。</p>
+<h2 id="4">4 电磁波谱<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 基本概念<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>波：振动的传播</p>
+<ul>
+<li>纵波：质点振动方向和波的传播方向相同</li>
+<li>横波：质点振动方向和波的传播方向垂直</li>
+</ul>
+</li>
+<li>
+<p>电磁波：交互变化的电磁场在空间中传播，是横波。</p>
+</li>
+<li>
+<p>电磁波谱：电磁波按照波长或频率、波数、能量大小按顺序进行排列，可见光部分称为光谱。（注意，由于遥感使用的是电磁波，波谱与光谱的概念经常混用）</p>
+</li>
+</ul>
+<h3 id="42">4.2 与遥感相关的主要参量<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>频率、波长：对应遥感传感器的接收波段</p>
+</li>
+<li>
+<p>传播方向：对应辐射源、地物和遥感平台间三者的位置关系 </p>
+</li>
+<li>
+<p>振幅：对应遥感影像中的强度、亮度</p>
+</li>
+<li>
+<p>偏振、相位：微波遥感中偏振被称为极化，极化是微波遥感中的一个重要参数</p>
+</li>
+</ul>
+<h3 id="43">4.3 紫外线<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>波段：0.01-0.38 <span class="arithmatex">\(\mu m\)</span> ，太阳辐射含有紫外线，通过大气层时，波长小于 0.3 <span class="arithmatex">\(\mu m\)</span> 的紫外线几乎都被吸收，只有 0.3-0.38 <span class="arithmatex">\(\mu m\)</span> 波长的紫外线部分能够穿过大气层，且散射严重。</p>
+</li>
+<li>
+<p>应用：</p>
+<ul>
+<li>主要用于探测碳酸盐岩的分布，碳酸盐岩在 0.38 <span class="arithmatex">\(\mu m\)</span> 以下的短波区域对紫外线的反射比其它类型的岩石强。</li>
+<li>油污染的监测，因为水面漂浮的油膜比周围水面反射的紫外线要强烈。</li>
+</ul>
+</li>
+<li>
+<p>探测高度：由于大气层中臭氧对紫外线的强烈吸收和散射作用，通常探测高度在 2000 米以下。</p>
+</li>
+</ul>
+<h3 id="44">4.4 可见光<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<p>波段：0.38-0.76 <span class="arithmatex">\(\mu m\)</span> ，是遥感中最常用的波段。在此波段大部分地物都具有良好的亮度反差特性，不同地物在此波段的图像易于区分。</p>
+<h3 id="45">4.5 红外<a class="headerlink" href="#45" title="Permanent link">&para;</a></h3>
+<h4 id="_4">波段<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>主要是 0.76-1 <span class="arithmatex">\(\mu m\)</span> ，又可以划分为</p>
+<ul>
+<li>0.76-3 <span class="arithmatex">\(\mu m\)</span> 近红外，与可见光相似，又称光红外</li>
+<li>3-6 <span class="arithmatex">\(\mu m\)</span> 中红外</li>
+<li>6-15 <span class="arithmatex">\(\mu m\)</span> 远红外</li>
+<li>15-1000 <span class="arithmatex">\(\mu m\)</span> 超远红外</li>
+</ul>
+<p>物体在常温范围内发射红外线的波长多在 3-40 <span class="arithmatex">\(\mu m\)</span> 之间，而 15 <span class="arithmatex">\(\mu m\)</span> 以上的超远红外易被大气和水分子吸收。</p>
+<h4 id="_5">热红外<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>中红外、远红外和超远红外是产生热感的原因，统称为热红外。</p>
+<h3 id="46">4.6 微波<a class="headerlink" href="#46" title="Permanent link">&para;</a></h3>
+<h4 id="_6">波段<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>主要是 1<span class="arithmatex">\(mm\)</span> - 1<span class="arithmatex">\(m\)</span> ，又分为</p>
+<ul>
+<li>毫米波</li>
+<li>厘米波</li>
+<li>分米波</li>
+</ul>
+<h4 id="_7">特点<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>微波辐射和红外辐射都具有热辐射性质。由于微波的波长比可见光、红外线要长，能穿透云、雾而不受天气影响，所以能进行全天时、全天候的遥感探测。</p>
+</li>
+<li>
+<p>微波遥感可以采用主动或被动方式成像，另外，微波对某些物质具有一定的穿透能力，能直接透过植被、冰雪、土壤等表层覆盖物。</p>
+</li>
+</ul>
+<h3 id="47">4.7 米波<a class="headerlink" href="#47" title="Permanent link">&para;</a></h3>
+<ul>
+<li>超短波 1-10 <span class="arithmatex">\(m\)</span></li>
+<li>短波 10-100 <span class="arithmatex">\(m\)</span></li>
+<li>中波 100-1000 <span class="arithmatex">\(m\)</span></li>
+<li>长波 1-10 <span class="arithmatex">\(km\)</span></li>
+<li>超长波 10-100 <span class="arithmatex">\(km\)</span></li>
+</ul>
+<blockquote>
+<p>使用人工辐射源的主动遥感一般使用长波，因为能量比较强，可以传播的距离比较远。</p>
+</blockquote>
+<h2 id="5">5 电磁波极限分辨率<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>瑞利判据：当一个艾里斑的边缘与另一个艾里斑的中心正好重合时，此时对应的两个物点刚好能被人眼或光学仪器所分辨。</p>
+<ul>
+<li>衍射图样的中心区域有最大的亮斑，艾里斑的角度与波长及小孔的直径满足 <span class="arithmatex">\(\sin \theta = 1.22 \frac{\lambda}{d}\)</span> 。</li>
+</ul>
+</li>
+<li>
+<p>实际应用时常用 <span class="arithmatex">\(\frac{\lambda}{4}\)</span> 作为识别的理论极限分辨率。</p>
+</li>
+</ul>
+<h2 id="6">6 电磁波 / 电磁辐射的传播<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 反射、折射与偏振<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>电磁波在两种不同介质的分界面将发生反射和折射，这时，入射能量的一部分或全部将返回原介质；另一部分能量将偏离原入射方向进入另一种介质，偏折的大小取决于电磁波在这两种介质中的传播速度之比及入射时的角度；当传播速度是波长的函数时还将发生散色现象，即不同波长的电磁波偏折的方向不同。</p>
+</li>
+<li>
+<p>在反射、折射、吸收和散射过程中还可能改变电磁波的偏振状态。</p>
+</li>
+</ul>
+<h3 id="62">6.2 吸收<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<p>电磁辐射不论在导体或电介质中传播时，都存在吸收过程，吸收的强弱程度与原子、分子及固体的结构有关。吸收系数还与电磁辐射的波长有关，即吸收具有选择性。</p>
+<ul>
+<li>
+<p>电磁波在介质中传播时强度随距离的增加而逐渐衰减，在这个过程中辐射能转化为其他形式的能量，通常是转变为热能。</p>
+</li>
+<li>
+<p>电磁辐射在导体中传播时部分电磁能转化为热能而耗损，电磁辐射强度随传播深度的增加呈指数衰减。</p>
+</li>
+</ul>
+<h3 id="63">6.3 散射<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>电磁辐射在不均匀介质中传播时，出现偏离原传播方向的现象，称为散射。散射强度随微粒的大小或分子密度的涨落尺度与入射电磁辐射波长之间的关系而变化。</p>
+</li>
+<li>
+<p>电磁辐射在均匀介质中传播时，被强迫振动的束缚电子产生的次波是相干的，由麦克斯韦方程推知它们的传播方向是不变的，所以不产生散射。</p>
+</li>
+</ul>
+<h2 id="7">7 电磁辐射的度量<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="71">7.1 辐射源<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
+<p>广义的，任何物体都是辐射源，不仅能吸收其它物体对它的辐射，也能向外辐射</p>
+<ul>
+<li>太阳辐射： 可见光遥感和近红外遥感的重要辐射源</li>
+<li>地球辐射： 热红外遥感的辐射源</li>
+<li>人工辐射源： 主动遥感辐射源</li>
+</ul>
+<h3 id="71-q">7.1 辐射能量 <span class="arithmatex">\(Q\)</span><a class="headerlink" href="#71-q" title="Permanent link">&para;</a></h3>
+<p>电磁辐射具有能量，表现在：</p>
+<ul>
+<li>使被辐照的物体温度升高</li>
+<li>改变物体的内部状态</li>
+<li>使带电物体受力而运动</li>
+<li>……</li>
+</ul>
+<p>辐射能量的单位是焦耳 <span class="arithmatex">\(J\)</span> 。</p>
+<h3 id="72-phi">7.2 辐射通量 <span class="arithmatex">\(\Phi\)</span><a class="headerlink" href="#72-phi" title="Permanent link">&para;</a></h3>
+<p>辐射通量指单位时间内通过某一面积的辐射能量</p>
+<div class="arithmatex">\[
+\Phi = \frac{dQ}{dt} ，
+\]</div>
+<p>是波长的函数。</p>
+<p>总辐射通量是各波段辐射通量之和或辐射通量的积分。</p>
+<h3 id="73-e">7.3 辐射通量密度 <span class="arithmatex">\(E\)</span><a class="headerlink" href="#73-e" title="Permanent link">&para;</a></h3>
+<p>辐射通量密度指单位时间内通过单位面积的辐射能量</p>
+<div class="arithmatex">\[
+E = \frac{d\Phi}{ds} 
+\]</div>
+<p>在遥感中辐射通量密度又可以表示为：</p>
+<ul>
+<li>
+<p>辐照度 <span class="arithmatex">\(I\)</span> ，即被辐射的物体表面单位面积上的辐射通量</p>
+<div class="arithmatex">\[
+I = \frac{d\Phi}{ds} 
+\]</div>
+</li>
+<li>
+<p>辐射出射度 <span class="arithmatex">\(M\)</span> ，即辐射源表面单位面积上的辐射通量</p>
+<div class="arithmatex">\[
+M = \frac{d\Phi}{ds} 
+\]</div>
+</li>
+</ul>
+<h3 id="74-l">7.4 辐射亮度 <span class="arithmatex">\(L\)</span><a class="headerlink" href="#74-l" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>对于点辐射源，是在某一方向上单位立体角内的辐射通量。</p>
+</li>
+<li>
+<p>对于面辐射源，是单位投影表面、单位立体角内的辐射通量。</p>
+</li>
+</ul>
+<h2 id="8">8 黑体辐射<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h3 id="81">8.1 绝对黑体<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<p>如果一个物体对于任何波长的电磁辐射全部吸收，则这个物体是绝对黑体，这是一种理想的吸收体，满足吸收系数为 1 ，反射系数为 0 。</p>
+<h3 id="82">8.2 黑体辐射特性<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
+<p>普朗克定律指出，黑体辐射特性由温度唯一决定。</p>
+<p><img alt="不同温度黑体辐射出射度" src="../planck.png" /></p>
+<ul>
+<li>
+<p>辐射通量密度随波长连续变化，每条曲线只有一个最大值。</p>
+</li>
+<li>
+<p>温度越高，辐射通量密度越大，不同温度的曲线不相交。</p>
+</li>
+<li>
+<p>随着温度升高，辐射最大值所对应的波长向短波方向移动。</p>
+</li>
+</ul>
+<h3 id="83">8.3 普朗克定律的延伸<a class="headerlink" href="#83" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>斯特番-玻尔兹曼定律：绝对黑体总辐射出射度与黑体温度的四次成正比</p>
+<div class="arithmatex">\[
+M = \sigma T^4 。
+\]</div>
+<blockquote>
+<p>结合太阳常数推算出太阳的有效温度为 <span class="arithmatex">\(5770K\)</span> 左右。</p>
+</blockquote>
+</li>
+<li>
+<p>维恩位移定律：黑体辐射光谱中最强的辐射波长与黑体绝对温度成反比</p>
+<div class="arithmatex">\[
+\lambda_{max} \cdot T = b 。
+\]</div>
+</li>
+</ul>
+<h3 id="84">8.4 黑体温度与颜色的关系<a class="headerlink" href="#84" title="Permanent link">&para;</a></h3>
+<p>黑体温度越高，辐射曲线的峰顶越向左移，颜色变化为暗红 <span class="arithmatex">\(\rightarrow\)</span> 红 <span class="arithmatex">\(\rightarrow\)</span> 橙 <span class="arithmatex">\(\rightarrow\)</span> 黄 <span class="arithmatex">\(\rightarrow\)</span> 青。</p>
+<h2 id="9">9 实际物体辐射<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<p>一般地物吸收系数小于 1 ，反射系数大于 0 ，不适用于黑体辐射定律。</p>
+<h3 id="91">9.1 基尔霍夫定律<a class="headerlink" href="#91" title="Permanent link">&para;</a></h3>
+<p>在热力学平衡的条件下，不同物体对相同波长的单色辐射出射度与单色吸率之比值都相等，并等于该温度下黑体对同一波长的单色辐射出射度，即辐照度仅与波长和温度有关。</p>
+<p>这也说明，绝对黑体不仅具有最大的吸收率，也具有最大的发射率，没有反射。</p>
+<h3 id="92-epsilon">9.2 地物发射率 <span class="arithmatex">\(\epsilon\)</span><a class="headerlink" href="#92-epsilon" title="Permanent link">&para;</a></h3>
+<p>地物单位面积上辐射能量与同温度下同面积黑体的辐射能量之比</p>
+<div class="arithmatex">\[
+\epsilon = \frac{M}{M_{blackbody}} 。
+\]</div>
+<p>地物发射率会受到地物种类、表面状况、温度、辐射波长等因素影响。</p>
+<blockquote>
+<p>地球可以等效为约 300 <span class="arithmatex">\(K\)</span> 的黑体，最强辐射波长大概 10 <span class="arithmatex">\(\mu m\)</span> 。</p>
+</blockquote>
+<h3 id="93">9.3 灰体<a class="headerlink" href="#93" title="Permanent link">&para;</a></h3>
+<p>灰体没有显著的选择性吸收，吸收率虽然小于 1 但是基本不随波长变化。</p>
+<p>一般金属材料都可以近似看成灰体。</p>
+<h2 id="10">10 太阳辐射<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<p>太阳辐射是最主要的辐射源，尤其用于被动遥感。</p>
+<p>地球表面不同区域接收到的太阳辐射大小不同。</p>
+<h3 id="101">10.1 太阳常数<a class="headerlink" href="#101" title="Permanent link">&para;</a></h3>
+<p>在不受大气影响，距离太阳一个天文单位（日地平均距离）处，垂直于太阳辐射方向，单位面积单位时间黑体所接收的太阳辐射能量，约为 1353 <span class="arithmatex">\(W / m^2\)</span> 。</p>
+<h3 id="102">10.2 太阳总辐射通量<a class="headerlink" href="#102" title="Permanent link">&para;</a></h3>
+<p>太阳常数与以日地距离为半径的球面积的乘积。</p>
+<h3 id="103">10.3 太阳光谱<a class="headerlink" href="#103" title="Permanent link">&para;</a></h3>
+<p>太阳发出的辐射包含可见光、紫外线、红外线等所有形式的电磁波。</p>
+<h3 id="104">10.4 特点<a class="headerlink" href="#104" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>太阳辐射光谱是连续的；</p>
+</li>
+<li>
+<p>辐射能量主要集中在 0.3-3 <span class="arithmatex">\(\mu m\)</span> 段，其中约有 43.5% 集中在可见光波段 0.38-0.76 <span class="arithmatex">\(\mu m\)</span> ，峰值在 0.47 <span class="arithmatex">\(\mu m\)</span> 处；</p>
+</li>
+<li>
+<p>紫外-红外波段能量集中、稳定，是被动遥感利用的主要波段，此时太阳活动对遥感的影响最小；</p>
+</li>
+<li>
+<p>海平面的太阳辐照度分布曲线与大气层外太阳辐照度分布曲线有很大不同，主要是由于地球大气层对太阳辐射的吸收和散射造成的。</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../chapter1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 绪论">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                绪论
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter3/" class="md-footer__link md-footer__link--next" aria-label="下一页: 遥感物理基础B">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                遥感物理基础B
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "navigation.sections", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../../javascripts/cover-typewriter.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="../../../assets/vendor/mathjax/3.2.2/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
