@@ -7,8 +7,11 @@
 数据依赖是数据的内在性质，指通过属性之间值是否相等体现的数据之间的相互关系，可以看成现实世界属性之间相互联系的抽象。
 
 数据依赖包括：  
+ 
  - 函数依赖 Functional Dependencies  
+ 
  - 多值依赖 Multivalued Dependencies
+ 
  - 其他
 
 #### 函数依赖
